@@ -580,10 +580,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 86bbc2e1-5c45-4689-a399-1cffd1e91a38
+  cloudProjectId: eb9b4ba5-0084-49f6-818a-24be5a276a57
   framebufferDepthMemorylessMode: 0
   projectName: Hello World!!
-  organizationId: jomondo
+  organizationId: cannongamell
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
