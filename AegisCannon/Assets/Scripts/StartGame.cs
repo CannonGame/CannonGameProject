@@ -11,7 +11,7 @@ public class StartGame : MonoBehaviour
         // This will lead to the Main Menu Scene once implemented.
         if (Input.anyKeyDown || Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("Level Select");
+            SceneManager.LoadScene("HomeScreen");
         }
     }
 }
