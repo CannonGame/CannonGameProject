@@ -36,4 +36,10 @@ public class SelectDifficultyButtons : MonoBehaviour
         SceneManager.LoadScene("Endless Wave 1");
 
     }
+
+    //When Home button is hit it takes you to the home screen
+    public void HomeButtonClick()
+    {
+        SceneManager.LoadScene("HomeScreen");
+    }
 }
