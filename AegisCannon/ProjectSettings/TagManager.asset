@@ -44,3 +44,6 @@ TagManager:
   - name: Background
     uniqueID: 533019775
     locked: 0
+  - name: Enemy Ship
+    uniqueID: 2947295953
+    locked: 0
