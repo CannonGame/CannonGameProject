@@ -4,18 +4,8 @@ using UnityEngine;
 
 public class ProjectileDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // Destroys Projectiles
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Shield" || col.gameObject.tag == "Colony")
