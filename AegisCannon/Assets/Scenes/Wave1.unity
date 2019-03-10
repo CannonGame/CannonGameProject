@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 26205495}
   m_Layer: 0
   m_Name: SpaceColony
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -342,6 +342,24 @@ MonoBehaviour:
   projectileSpeed: 5
   shipTransform: {fileID: 295703257}
   projectileBody: {fileID: 600762925}
+--- !u!1 &357727910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1988050153720487109, guid: 2a2b1a0994a554245b29a2a74c43db36,
+    type: 3}
+  m_PrefabInstance: {fileID: 1988050153246127852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &357727915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357727910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acee5d0d8e3b73a418c855a1b3794e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &517534519
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +541,7 @@ GameObject:
   - component: {fileID: 1218430919}
   m_Layer: 0
   m_Name: PlayerShield
-  m_TagString: Untagged
+  m_TagString: Colony
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
