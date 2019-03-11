@@ -18,7 +18,8 @@ public class HomeScreenButtonClicks : MonoBehaviour
     // When the Options button is hit, the Options scene is loaded.
     public void OptionsButtonClick()
     {
-        SceneManager.LoadScene("Options");
+        //Editted by DM
+        SceneManager.LoadScene("OptionsScreen");
         //Test with Start Screen until other scenes are ready
         //SceneManager.LoadScene("StartScreen");
     }
