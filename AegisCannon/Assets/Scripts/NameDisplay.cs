@@ -11,9 +11,6 @@ public class NameDisplay : MonoBehaviour
     private Vector3 vectorPlaceHolder;
     int randomInt;
 
-
-
-
     // Calls 3 methods. First method shuffles our name into an array. Second method shuffles the coordinates of our names randomly.
     // Thrid Method puts a random name into a random coordinate and Instatiates it.
     void Start()
@@ -30,21 +27,17 @@ public class NameDisplay : MonoBehaviour
     public void NameGenerator()
     {
 
-
         for (int i = Names.Length - 1; i >= 0; i--)
         {
 
             randomInt = Random.Range(0, i);
-
             placeHolderObject = Names[i];
             Names[i] = Names[randomInt];
             Names[randomInt] = placeHolderObject;
             Debug.Log(Names[i]);
 
-            
         }
        
-
     }
 
     // Randomly sorts the coordinates of our names in an array.
@@ -55,12 +48,10 @@ public class NameDisplay : MonoBehaviour
         {
 
             randomInt = Random.Range(0, i);
-
             vectorPlaceHolder = namePosArray[i];
             namePosArray[i] = namePosArray[randomInt];
             namePosArray[randomInt] = vectorPlaceHolder;
             Debug.Log(namePosArray[i]);
-
 
         }
 
