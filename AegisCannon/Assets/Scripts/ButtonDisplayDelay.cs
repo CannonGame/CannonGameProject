@@ -18,26 +18,21 @@ public class ButtonDisplayDelay : MonoBehaviour
 
         // Starts Coroutine ButtonDelay that waits 3 seconds and displays all buttons.
         StartCoroutine(ButtonDelay());
-
     }
 
     // Method to activate buttons.
     public void ActivateButtons()
     {
-
         RetryButton.SetActive(true);
         HomeButton.SetActive(true);
         ExitButton.SetActive(true);
-
     }
 
     // Coroutine Method to wait 3 seconds and then display all buttons.
     public IEnumerator ButtonDelay()
     {
-
         yield return new WaitForSeconds(3);
         ActivateButtons();
-
     }
 
 }

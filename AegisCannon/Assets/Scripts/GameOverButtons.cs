@@ -7,24 +7,18 @@ public class GameOverButtons : MonoBehaviour
     // Starts current game over at wave 1.
     public void RetryButton()
     {
-
         SceneManager.LoadScene("Placeholder");
-
     }
 
     // Takes user to HomeScreen Scene.
     public void HomeButton()
     {
-
         SceneManager.LoadScene("HomeScreen");
-
     }
 
     // Exits game.
     public void ExitButton()
     {
-
         Application.Quit();
-
     }
 }
