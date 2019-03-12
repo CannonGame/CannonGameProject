@@ -12,7 +12,6 @@ public class TextFadeIn : MonoBehaviour
     {
         // Starts Coroutine Method to fade in buttons based on specified delay.
         StartCoroutine(FadeTextIn(delay, GetComponent<Image>()));
-
     }
 
     // Coroutine Method to fade in the game over message.
@@ -22,10 +21,8 @@ public class TextFadeIn : MonoBehaviour
 
         while (i.color.a < 1.0f)
         {
-
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
             yield return null;
-
         }
     }
 

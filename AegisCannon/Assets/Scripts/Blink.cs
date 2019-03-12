@@ -25,7 +25,6 @@ public class Blink : MonoBehaviour
     // Method to make button blink by invoking ToggleState() with a specified interval.
     public void StartBlink()
     {
-        
         if (isBlinking)
             return;
 
@@ -34,14 +33,12 @@ public class Blink : MonoBehaviour
             isBlinking = true;
             InvokeRepeating("ToggleState", startDelay, interval);
         }
-
     }
 
     // Method that toggles image on and off creating a blink effect.
     public void ToggleState()
     {
         imageToToggle.enabled = !imageToToggle.enabled;
-
     }
 
 }

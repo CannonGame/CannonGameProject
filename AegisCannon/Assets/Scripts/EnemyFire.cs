@@ -19,17 +19,14 @@ public class EnemyFire : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         StartCoroutine(StartFire());
-
     }
 
 
     // Method to make enemies fire a projectile upwards relative to their position.
     void FireShot()
     {
-
         Rigidbody2D projectile1 = Instantiate(projectileBody, shipTransform.position, shipTransform.rotation);
         projectile1.velocity = transform.up * projectileSpeed;
-
     }
 
      /* Infinitely runs this coroutine. Waits a random amount of time, sets the Animator component bool "Firing" to true, which triggers the blinking animation. Waits
@@ -38,14 +35,11 @@ public class EnemyFire : MonoBehaviour
     {
         while (true)
         {
-
             yield return new WaitForSeconds(Random.Range(randomMin, randomMax));
             animator.SetBool("Firing", true);
             yield return new WaitForSeconds(delay);
             animator.SetBool("Firing", false);
             FireShot();
-
         }
     }
-
 }

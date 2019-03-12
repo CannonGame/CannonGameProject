@@ -15,52 +15,41 @@ public class NameDisplay : MonoBehaviour
     // Thrid Method puts a random name into a random coordinate and Instatiates it.
     void Start()
     {
-      
         NameGenerator();
         NamePosRandomizer();
         NamePosSetter();
-
     }
 
 
     // Randomly sorts our names into an array.
     public void NameGenerator()
     {
-
         for (int i = Names.Length - 1; i >= 0; i--)
         {
-
             randomInt = Random.Range(0, i);
             placeHolderObject = Names[i];
             Names[i] = Names[randomInt];
             Names[randomInt] = placeHolderObject;
             Debug.Log(Names[i]);
-
         }
-       
     }
 
     // Randomly sorts the coordinates of our names in an array.
     public void NamePosRandomizer()
     {
-
         for (int i = namePosArray.Length - 1; i >= 0; i--)
         {
-
             randomInt = Random.Range(0, i);
             vectorPlaceHolder = namePosArray[i];
             namePosArray[i] = namePosArray[randomInt];
             namePosArray[randomInt] = vectorPlaceHolder;
             Debug.Log(namePosArray[i]);
-
         }
-
     }
 
     // Places our names randomly in a random coordinate Then instantiates a clone of the prefab.
     public void NamePosSetter()
     {
-
         GameObject name1 = Instantiate(Names[0],namePosArray[0], Quaternion.identity) as GameObject;
         name1.transform.SetParent(GameObject.Find("Canvas").transform, false);
         GameObject name2 = Instantiate(Names[1], namePosArray[1], Quaternion.identity) as GameObject;
@@ -69,7 +58,5 @@ public class NameDisplay : MonoBehaviour
         name3.transform.SetParent(GameObject.Find("Canvas").transform, false);
         GameObject name4 = Instantiate(Names[3], namePosArray[3], Quaternion.identity) as GameObject;
         name4.transform.SetParent(GameObject.Find("Canvas").transform, false);
-
     }
-
 }
