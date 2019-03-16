@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SelectDifficultyButtons : MonoBehaviour
+public class SelectDifficultyButtons: MonoBehaviour
 {
-    // Loads Easy Mode Wave 1.
+    // Loads Easy Mode Wave 1. Changes static variables to adjust difficulty.
     public void EasyButton()
     {
-        SceneManager.LoadScene("Easy Wave 1");
+        SceneManager.LoadScene("Wave 1");
+        EnemyFire.randomMin = 5f;
+        EnemyFire.randomMax = 10f;
+        EnemyFire.projectileSpeed = 3f;
+        EnergyBar.maxHealth = 200f;
+        EnergyBar.maxEnergy = 200f;
+        EnergyBar.damage = 10f;
+        EnergyBar.heal = 10f;
     }
 
     // Loads Medium Mode Wave 1.

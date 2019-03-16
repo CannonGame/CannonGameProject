@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Shield
   - Colony
+  - Projectile
   layers:
   - Default
   - TransparentFX

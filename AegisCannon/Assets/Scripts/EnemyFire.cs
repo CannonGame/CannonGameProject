@@ -7,9 +7,9 @@ public class EnemyFire : MonoBehaviour
     // Can tweak the public floats inside of Unity in the inspector.
     Animator animator;
     public float delay = 1.5f;
-    public float randomMin = 3f;
-    public float randomMax = 8f;
-    public float projectileSpeed = 0f;
+    public static float randomMin = 3f;
+    public static float randomMax = 8f;
+    public static float projectileSpeed = 3f;
     public Transform shipTransform;
     public Rigidbody2D projectileBody;
 
@@ -20,7 +20,6 @@ public class EnemyFire : MonoBehaviour
         animator = GetComponent<Animator>();
         StartCoroutine(StartFire());
     }
-
 
     // Method to make enemies fire a projectile upwards relative to their position.
     void FireShot()

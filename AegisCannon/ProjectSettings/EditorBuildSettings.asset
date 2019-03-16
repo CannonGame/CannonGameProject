@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OptionsScreen.unity
     guid: f0b1c5adb1654b94787d9effa586bf2d
+  - enabled: 1
+    path: Assets/Scenes/Wave 1.unity
+    guid: 6b00ffad68ca8c24c9c46959baefa1d9
   m_configObjects: {}
