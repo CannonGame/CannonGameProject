@@ -1000,7 +1000,7 @@ PrefabInstance:
     - target: {fileID: 3761396193934229262, guid: 9cbf898ed676d134ebb0da0ede7b14fa,
         type: 3}
       propertyPath: m_Name
-      value: Dustin McCommic
+      value: Dustin McComic
       objectReference: {fileID: 0}
     - target: {fileID: 3761396193934229261, guid: 9cbf898ed676d134ebb0da0ede7b14fa,
         type: 3}
