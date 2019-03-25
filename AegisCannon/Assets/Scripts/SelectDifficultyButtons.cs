@@ -8,7 +8,7 @@ public class SelectDifficultyButtons : MonoBehaviour
     // Loads Easy Mode Wave 1.
     public void EasyButton()
     {
-        SceneManager.LoadScene("Easy Wave 1");
+        SceneManager.LoadScene("Wave1");
     }
 
     // Loads Medium Mode Wave 1.
