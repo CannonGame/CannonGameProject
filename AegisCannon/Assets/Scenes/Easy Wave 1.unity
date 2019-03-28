@@ -354,6 +354,9 @@ MonoBehaviour:
   delay: 2
   shipTransform: {fileID: 295703257}
   projectileBody: {fileID: 600762925}
+  preparingToFire: 0
+  firing: 0
+  shouldFire: 1
 --- !u!1 &357727910 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1988050153720487109, guid: 2a2b1a0994a554245b29a2a74c43db36,
@@ -1146,6 +1149,9 @@ MonoBehaviour:
   delay: 2
   shipTransform: {fileID: 1225990391}
   projectileBody: {fileID: 600762925}
+  preparingToFire: 0
+  firing: 0
+  shouldFire: 1
 --- !u!1 &1600261929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1267,9 @@ MonoBehaviour:
   delay: 2
   shipTransform: {fileID: 1600261932}
   projectileBody: {fileID: 600762925}
+  preparingToFire: 0
+  firing: 0
+  shouldFire: 1
 --- !u!1 &1998869356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,6 +1530,9 @@ MonoBehaviour:
   delay: 2
   shipTransform: {fileID: 2064352561}
   projectileBody: {fileID: 600762925}
+  preparingToFire: 0
+  firing: 0
+  shouldFire: 1
 --- !u!1001 &1988050153246127852
 PrefabInstance:
   m_ObjectHideFlags: 0
