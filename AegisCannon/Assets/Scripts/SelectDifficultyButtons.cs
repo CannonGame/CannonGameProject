@@ -13,6 +13,7 @@ public class SelectDifficultyButtons: MonoBehaviour
         EnemyFire.randomMax = 10f;
         EnemyFire.projectileSpeed = 3f;
         EnergyBar.maxHealth = 200f;
+        EnergyBar.currentEnergy = 100f;
         EnergyBar.maxEnergy = 200f;
         EnergyBar.damage = 10f;
         EnergyBar.heal = 10f;
@@ -27,6 +28,7 @@ public class SelectDifficultyButtons: MonoBehaviour
         EnemyFire.projectileSpeed = 4f;
         EnergyBar.maxHealth = 175f;
         EnergyBar.maxEnergy = 175f;
+        EnergyBar.currentEnergy = 44f;
         EnergyBar.damage = 12f;
         EnergyBar.heal = 10f;
 
@@ -40,6 +42,7 @@ public class SelectDifficultyButtons: MonoBehaviour
         EnemyFire.randomMax = 7f;
         EnemyFire.projectileSpeed = 4.5f;
         EnergyBar.maxHealth = 150f;
+        EnergyBar.currentEnergy = 0f;
         EnergyBar.maxEnergy = 150f;
         EnergyBar.damage = 15f;
         EnergyBar.heal = 10f;
@@ -53,6 +56,7 @@ public class SelectDifficultyButtons: MonoBehaviour
         EnemyFire.randomMax = 10f;
         EnemyFire.projectileSpeed = 3.5f;
         EnergyBar.maxHealth = 200f;
+        EnergyBar.currentEnergy = 0f;
         EnergyBar.maxEnergy = 200f;
         EnergyBar.damage = 10f;
         EnergyBar.heal = 10f;

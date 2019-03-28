@@ -17,10 +17,7 @@ public class EnergyBar : MonoBehaviour
     // Sets max energy and health. Sets current energy and health to max. Adjusts slider according to percentage.
     void Start()
     {
-        maxEnergy = 100f;
-        currentEnergy = maxEnergy;
         energyBar.value = CalculateEnergy();
-        maxHealth = 100f;
         currentHealth = maxHealth;
         healthBar.value = CalculateHealth();
     }
