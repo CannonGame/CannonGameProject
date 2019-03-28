@@ -159,9 +159,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.06}
+  m_Offset: {x: -0.01224494, y: 0.04776025}
   serializedVersion: 2
-  m_Radius: 1.25
+  m_Radius: 1.2255368
 --- !u!212 &26205497
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
   delay: 2
   randomMin: 3
   randomMax: 8
-  projectileSpeed: 5
+  projectileSpeed: 2
   shipTransform: {fileID: 295703257}
   projectileBody: {fileID: 600762925}
 --- !u!1 &357727910 stripped
@@ -573,7 +573,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09, y: 0.22}
+  m_Offset: {x: 0.087653995, y: 0.21824136}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -584,7 +584,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.95, y: 0.16}
+  m_Size: {x: 0.9781519, y: 0.11427307}
   m_EdgeRadius: 0
 --- !u!212 &1218430921
 SpriteRenderer:
@@ -643,7 +643,7 @@ Transform:
   m_GameObject: {fileID: 1218430918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.12, y: 1.38, z: -0.21611601}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -796,7 +796,7 @@ MonoBehaviour:
   delay: 2
   randomMin: 3
   randomMax: 8
-  projectileSpeed: 5
+  projectileSpeed: 2
   shipTransform: {fileID: 1225990391}
   projectileBody: {fileID: 600762925}
 --- !u!1 &1600261929
@@ -914,7 +914,7 @@ MonoBehaviour:
   delay: 2
   randomMin: 3
   randomMax: 8
-  projectileSpeed: 5
+  projectileSpeed: 2
   shipTransform: {fileID: 1600261932}
   projectileBody: {fileID: 600762925}
 --- !u!1 &2034921256
@@ -1098,7 +1098,7 @@ MonoBehaviour:
   delay: 2
   randomMin: 3
   randomMax: 8
-  projectileSpeed: 5
+  projectileSpeed: 2
   shipTransform: {fileID: 2064352561}
   projectileBody: {fileID: 600762925}
 --- !u!1001 &1988050153246127852

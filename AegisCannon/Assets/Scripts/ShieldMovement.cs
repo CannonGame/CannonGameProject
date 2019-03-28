@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class ShieldMovement : MonoBehaviour
 {
-    //Fields
-    const int leftRotateSpeed = 120;
-    const int rightRotateSpeed = -120;
+    //Fields    
+    float inputX;
+    const int moveSpeed = -200;
     
     // Update is called once per frame
     void Update()
     {
         // Adjust shield when phone is moved
-        if (Input.acceleration.x < 0)
+        inputX = Input.acceleration.x;
+        //Debug.Log(inputX);
+
+        if (inputX < 0)
         {
-            transform.RotateAround(Vector3.zero, Vector3.forward, leftRotateSpeed * Time.deltaTime);
+            transform.RotateAround(Vector3.zero, Vector3.forward, (inputX * moveSpeed) * Time.deltaTime);
         }
-        if (Input.acceleration.x > 0)
+        if (inputX > 0)
         {
-            transform.RotateAround(Vector3.zero, Vector3.forward, rightRotateSpeed * Time.deltaTime);
+            transform.RotateAround(Vector3.zero, Vector3.forward, (inputX * moveSpeed) * Time.deltaTime);
         }
     }
 }
