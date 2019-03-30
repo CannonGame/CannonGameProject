@@ -62,7 +62,6 @@ public class EnemyFire : MonoBehaviour
         }
     }
 
-
      /* Infinitely runs this coroutine. Waits a random amount of time, sets the Animator component bool "Firing" to true if the ships shouldFire bool is true and firing bool is true. 
         Triggers the blinking animation. Waits duration of the variable delay and sets the "Firing" bool to false to turn off the animation. Then calls FireShot to make enemy fire a projectile.
         sets preparingToFire, firing, and shouldFire to false, waits random amount of time, then sets shouldFire back to true. This way we can control multiple ships with this one script*/

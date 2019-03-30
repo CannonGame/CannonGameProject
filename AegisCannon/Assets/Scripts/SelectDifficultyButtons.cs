@@ -16,7 +16,7 @@ public class SelectDifficultyButtons: MonoBehaviour
         EnergyBar.currentEnergy = 100f;
         EnergyBar.maxEnergy = 200f;
         EnergyBar.damage = 10f;
-        EnergyBar.heal = 10f;
+        EnergyBar.heal = 100f;
     }
 
     // Loads Medium Mode Wave 1.
