@@ -13,6 +13,7 @@ public class EnergyBar : MonoBehaviour
     public static float heal = 5f;
     public static float currentHealth;
     public static float maxHealth;
+    public GameObject energyCircle;
 
     // Sets max energy and health. Sets current energy and health to max. Adjusts slider according to percentage.
     void Start()
@@ -20,6 +21,13 @@ public class EnergyBar : MonoBehaviour
         energyBar.value = CalculateEnergy();
         currentHealth = maxHealth;
         healthBar.value = CalculateHealth();
+        energyCircle.SetActive(false);
+    }
+
+    // Checks for energy shield level.
+    void FixedUpdate()
+    {
+        TriggerWin();
     }
 
     // Deals damage to energy shield. Does not allow energy shield to go below zero.
@@ -83,6 +91,17 @@ public class EnergyBar : MonoBehaviour
         else
         {
             DamageHealth(damage);
+        }
+    }
+    // Method to check if energy bar is at max and enables the energy circle if so.
+    void TriggerWin()
+    {
+        if(currentEnergy == maxEnergy)
+        {
+            energyCircle.SetActive(true);
+            GameObject.Find("PlayerShield").transform.localScale = new Vector3(0, 0, 0);
+            FindObjectOfType<ShakeBehaviour>().TriggerShake();
+
         }
     }
 }

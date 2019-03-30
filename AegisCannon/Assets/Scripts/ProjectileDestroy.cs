@@ -8,7 +8,7 @@ public class ProjectileDestroy : MonoBehaviour
     // Destroys Projectiles
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Shield" || col.gameObject.tag == "Colony")
+        if (col.gameObject.tag == "Shield" || col.gameObject.tag == "Colony" || col.gameObject.tag == "ShieldCircle")
         {
             Destroy(gameObject);
         }
