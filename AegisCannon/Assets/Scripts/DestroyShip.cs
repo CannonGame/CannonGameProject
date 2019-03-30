@@ -11,6 +11,7 @@ public class DestroyShip : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
+    // Method to destroy ships on pulse wave impact.
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "ShieldCircle")
