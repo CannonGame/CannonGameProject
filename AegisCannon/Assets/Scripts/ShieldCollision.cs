@@ -6,8 +6,8 @@ public class ShieldCollision : MonoBehaviour
 {
     // Fields
     static bool shield = false;
-    float timer = 1f;
-    float delay = 1f;
+    float timer = 0.5f;
+    float delay = 0.5f;
 
     // Update is called once per frame
     void Update()

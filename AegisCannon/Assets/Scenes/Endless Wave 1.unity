@@ -174,9 +174,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.06}
+  m_Offset: {x: 0.0055595636, y: 0.032214403}
   serializedVersion: 2
-  m_Radius: 1.25
+  m_Radius: 1.2278222
 --- !u!212 &26205497
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -354,6 +354,9 @@ MonoBehaviour:
   delay: 2
   shipTransform: {fileID: 295703257}
   projectileBody: {fileID: 600762925}
+  preparingToFire: 0
+  firing: 0
+  shouldFire: 1
 --- !u!1 &357727910 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1988050153720487109, guid: 2a2b1a0994a554245b29a2a74c43db36,
@@ -911,6 +914,8 @@ GameObject:
   - component: {fileID: 1218430920}
   - component: {fileID: 1218430919}
   - component: {fileID: 1218430923}
+  - component: {fileID: 1218430925}
+  - component: {fileID: 1218430924}
   m_Layer: 0
   m_Name: PlayerShield
   m_TagString: Shield
@@ -943,7 +948,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09, y: 0.22}
+  m_Offset: {x: 0.087941006, y: 0.22000006}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -954,7 +959,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.95, y: 0.16}
+  m_Size: {x: 0.96235394, y: 0.08590913}
   m_EdgeRadius: 0
 --- !u!212 &1218430921
 SpriteRenderer:
@@ -1013,7 +1018,7 @@ Transform:
   m_GameObject: {fileID: 1218430918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.12, y: 1.38, z: -0.21611601}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1031,6 +1036,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBar: {fileID: 26205494}
+--- !u!114 &1218430924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218430918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9023638259ff97468455092d5bd76e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &1218430925
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218430918}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1225990388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,6 +1184,9 @@ MonoBehaviour:
   delay: 2
   shipTransform: {fileID: 1225990391}
   projectileBody: {fileID: 600762925}
+  preparingToFire: 0
+  firing: 0
+  shouldFire: 1
 --- !u!1 &1600261929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1302,9 @@ MonoBehaviour:
   delay: 2
   shipTransform: {fileID: 1600261932}
   projectileBody: {fileID: 600762925}
+  preparingToFire: 0
+  firing: 0
+  shouldFire: 1
 --- !u!1 &1998869356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,6 +1565,9 @@ MonoBehaviour:
   delay: 2
   shipTransform: {fileID: 2064352561}
   projectileBody: {fileID: 600762925}
+  preparingToFire: 0
+  firing: 0
+  shouldFire: 1
 --- !u!1001 &1988050153246127852
 PrefabInstance:
   m_ObjectHideFlags: 0
