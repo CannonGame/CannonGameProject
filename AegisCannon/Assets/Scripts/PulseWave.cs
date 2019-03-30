@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PulseWave : MonoBehaviour
 {
-    Animator animator;
+    private Animator animator;
     bool animationPlayed = false;
-    AudioSource audio;
+    private AudioSource audio;
     public AudioClip pulse;
     public AudioClip charge;
+
+    public Animator Animator { get => animator; set => animator = value; }
+    public AudioSource Audio { get => audio; set => audio = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -27,15 +30,15 @@ public class PulseWave : MonoBehaviour
         if (EnergyBar.currentHealth == EnergyBar.maxHealth && !animationPlayed)
         {
             animationPlayed = true;
-            audio = GetComponent<AudioSource>();
-            audio.clip = charge;
-            audio.Play();
+            Audio = GetComponent<AudioSource>();
+            Audio.clip = charge;
+            Audio.Play();
             yield return new WaitForSeconds(4);
-            audio = GetComponent<AudioSource>();
-            audio.clip = pulse;
-            audio.Play();
+            Audio = GetComponent<AudioSource>();
+            Audio.clip = pulse;
+            Audio.Play();
             animator.Play("PulseWave");
-            audio.Play();
+            Audio.Play();
             yield return new WaitForSeconds(.4f);
             animator.enabled = false;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
