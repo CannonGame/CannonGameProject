@@ -12,6 +12,7 @@ public class PulseWave : MonoBehaviour
     public AudioClip pulse;
     public AudioClip charge;
     public int completedWaves = 0;
+    public int difficultySetting;
 
     public Animator Animator { get => animator; set => animator = value; }
     public AudioSource Audio { get => audio; set => audio = value; }
@@ -46,18 +47,22 @@ public class PulseWave : MonoBehaviour
             animator.enabled = false;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             completedWaves += 1;
+            difficultySetting = SelectDifficultyButtons.GetDifficultySetting();
 
             if (completedWaves != 15)
             {
-                yield return new WaitForSeconds(1.5f);
-                SceneManager.LoadScene("Easy Wave 1");
-                EnemyFire.randomMin = 3f;
-                EnemyFire.randomMax = 6f;
-                EnemyFire.projectileSpeed = 3f;
-                EnergyBar.currentEnergy = 100f;
-                EnergyBar.maxEnergy = 200f;
-                EnergyBar.damage = 10f;
-                EnergyBar.heal = 100f;
+                if (difficultySetting == 1)
+                {
+                    yield return new WaitForSeconds(1.5f);
+                    SceneManager.LoadScene("Easy Wave 1");
+                    EnemyFire.randomMin = 3f;
+                    EnemyFire.randomMax = 6f;
+                    EnemyFire.projectileSpeed = 3f;
+                    EnergyBar.currentEnergy = 100f;
+                    EnergyBar.maxEnergy = 200f;
+                    EnergyBar.damage = 10f;
+                    EnergyBar.heal = 100f;
+                }
             }
         }
     }
