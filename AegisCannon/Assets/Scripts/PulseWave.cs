@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PulseWave : MonoBehaviour
 {
+    // Fields
     private Animator animator;
     bool animationPlayed = false;
     private AudioSource audio;
     public AudioClip pulse;
     public AudioClip charge;
+    public int completedWaves = 0;
 
     public Animator Animator { get => animator; set => animator = value; }
     public AudioSource Audio { get => audio; set => audio = value; }
@@ -42,6 +45,20 @@ public class PulseWave : MonoBehaviour
             yield return new WaitForSeconds(.4f);
             animator.enabled = false;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            completedWaves += 1;
+
+            if (completedWaves != 15)
+            {
+                yield return new WaitForSeconds(1.5f);
+                SceneManager.LoadScene("Easy Wave 1");
+                EnemyFire.randomMin = 3f;
+                EnemyFire.randomMax = 6f;
+                EnemyFire.projectileSpeed = 3f;
+                EnergyBar.currentEnergy = 100f;
+                EnergyBar.maxEnergy = 200f;
+                EnergyBar.damage = 10f;
+                EnergyBar.heal = 100f;
+            }
         }
     }
 }
