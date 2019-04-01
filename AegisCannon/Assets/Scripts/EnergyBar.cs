@@ -12,8 +12,9 @@ public class EnergyBar : MonoBehaviour
     public static float damage = 5f;
     public static float heal = 5f;
     public static float currentHealth;
-    public static float maxHealth;
+    public static float maxHealth = 100;
     public GameObject energyCircle;
+    public int difficultySetting;
 
     // Sets max energy and health. Sets current energy and health to max. Adjusts slider according to percentage.
     void Start()
@@ -26,7 +27,7 @@ public class EnergyBar : MonoBehaviour
 
     // Checks for energy shield level.
     void FixedUpdate()
-    {
+    {        
         TriggerWin();
     }
 
@@ -44,11 +45,24 @@ public class EnergyBar : MonoBehaviour
     }
 
     // Deals damage to health if there is no energy shield left. Does not allow to go below zero.
-    void DamageHealth(float damage)
+    void DamageHealth()
     {
-        currentHealth -= damage;
+        difficultySetting = SelectDifficultyButtons.GetDifficultySetting();
 
-        if(currentHealth <= 0)
+        if (difficultySetting == 1)
+        {
+            currentHealth -= (maxHealth / 4);
+        }
+        else if (difficultySetting == 3) 
+        {
+            currentHealth -= (maxHealth / 2);
+        }
+        else
+        {
+            currentHealth -= (maxHealth / 3);
+        }
+
+        if (currentHealth <= 0)
         {
             currentHealth = 0;
         }
@@ -90,7 +104,7 @@ public class EnergyBar : MonoBehaviour
         }
         else
         {
-            DamageHealth(damage);
+            DamageHealth();
         }
     }
     // Method to check if energy bar is at max and enables the energy circle if so.

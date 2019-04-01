@@ -5,14 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class SelectDifficultyButtons: MonoBehaviour
 {
+    // Fields
+    public static int difficultySetting = 0;
+
     // Loads Easy Mode Wave 1. Changes static variables to adjust difficulty.
     public void EasyButton()
     {
+        difficultySetting = 1;
         SceneManager.LoadScene("Easy Wave 1");
-        EnemyFire.randomMin = 5f;
-        EnemyFire.randomMax = 10f;
-        EnemyFire.projectileSpeed = 3f;
-        EnergyBar.maxHealth = 200f;
+        EnemyFire.randomMin = 3f;
+        EnemyFire.randomMax = 6f;
+        EnemyFire.projectileSpeed = 3f;        
         EnergyBar.currentEnergy = 100f;
         EnergyBar.maxEnergy = 200f;
         EnergyBar.damage = 10f;
@@ -22,11 +25,11 @@ public class SelectDifficultyButtons: MonoBehaviour
     // Loads Medium Mode Wave 1.
     public void MediumButton()
     {
+        difficultySetting = 2;
         SceneManager.LoadScene("Medium Wave 1");
-        EnemyFire.randomMin = 4f;
-        EnemyFire.randomMax = 8f;
+        EnemyFire.randomMin = 2f;
+        EnemyFire.randomMax = 5f;
         EnemyFire.projectileSpeed = 4f;
-        EnergyBar.maxHealth = 175f;
         EnergyBar.maxEnergy = 175f;
         EnergyBar.currentEnergy = 44f;
         EnergyBar.damage = 12f;
@@ -36,12 +39,12 @@ public class SelectDifficultyButtons: MonoBehaviour
 
     // Loads Hard Mode Wave 1.
     public void HardButton()
-    { 
+    {
+        difficultySetting = 3;
         SceneManager.LoadScene("Hard Wave 1");
-        EnemyFire.randomMin = 3f;
-        EnemyFire.randomMax = 7f;
+        EnemyFire.randomMin = 1f;
+        EnemyFire.randomMax = 4f;
         EnemyFire.projectileSpeed = 4.5f;
-        EnergyBar.maxHealth = 150f;
         EnergyBar.currentEnergy = 0f;
         EnergyBar.maxEnergy = 150f;
         EnergyBar.damage = 15f;
@@ -51,11 +54,11 @@ public class SelectDifficultyButtons: MonoBehaviour
     // Loads Endless Mode Wave 1.
     public void EndlessButton()
     {
+        difficultySetting = 4;
         SceneManager.LoadScene("Endless Wave 1");
-        EnemyFire.randomMin = 5f;
-        EnemyFire.randomMax = 10f;
+        EnemyFire.randomMin = 2f;
+        EnemyFire.randomMax = 6f;
         EnemyFire.projectileSpeed = 3.5f;
-        EnergyBar.maxHealth = 200f;
         EnergyBar.currentEnergy = 0f;
         EnergyBar.maxEnergy = 200f;
         EnergyBar.damage = 10f;
@@ -66,5 +69,11 @@ public class SelectDifficultyButtons: MonoBehaviour
     public void HomeButtonClick()
     {
         SceneManager.LoadScene("HomeScreen");
+    }
+
+    // difficultySetting getter
+    public static int GetDifficultySetting()
+    {
+        return difficultySetting;
     }
 }
