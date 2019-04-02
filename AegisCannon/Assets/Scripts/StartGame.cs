@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+using System;
 
 public class StartGame : MonoBehaviour
 {
+    
+
     // Update is called once per frame
     void Update()
     {
@@ -12,6 +16,8 @@ public class StartGame : MonoBehaviour
         if (Input.anyKeyDown || Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene("HomeScreen");
+
+            //FindObjectOfType<AudioManager>().Play("Button Sound");
         }
     }
 }

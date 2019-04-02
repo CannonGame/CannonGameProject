@@ -13,6 +13,8 @@ public class OptionsBackButton : MonoBehaviour
         if (Input.anyKeyDown || Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene("HomeScreen");
+
+            //FindObjectOfType<AudioManager>().Play("buttonSound");
         }
     }
 }
