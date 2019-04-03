@@ -15,13 +15,13 @@ public class SelectDifficultyButtons : MonoBehaviour
         difficultySetting = 1;
         completedWaves = 0;
         SceneManager.LoadScene("Easy Wave 1");
-        EnemyFire.randomMin = 3f;
-        EnemyFire.randomMax = 6f;
+        EnemyFire.randomMin = 6f;
+        EnemyFire.randomMax = 10f;
         EnemyFire.projectileSpeed = 3f;
         EnergyBar.currentEnergy = 100f;
         EnergyBar.maxEnergy = 200f;
         EnergyBar.damage = 10f;
-        EnergyBar.heal = 100f;
+        EnergyBar.heal = 50f;
     }
 
     // Loads Medium Mode Wave 1.

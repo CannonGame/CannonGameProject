@@ -53,16 +53,25 @@ public class PulseWave : MonoBehaviour
                 if (SelectDifficultyButtons.difficultySetting == 1)
                 {
                     yield return new WaitForSeconds(1.5f);
-                    EnemyFire.randomMin = 3.00f - (((float)SelectDifficultyButtons.difficultySetting * 0.10f) + ((float)SelectDifficultyButtons.completedWaves * 0.10f));
-                    Debug.Log(EnemyFire.randomMin);
-                    Debug.Log(SelectDifficultyButtons.difficultySetting);
-                    Debug.Log(SelectDifficultyButtons.completedWaves);
-                    EnemyFire.randomMax = 6f;
+                    EnemyFire.randomMin -=  ((float)SelectDifficultyButtons.completedWaves * 0.075f);
+                    //Debug.Log(EnemyFire.randomMin);
+                    //Debug.Log(SelectDifficultyButtons.difficultySetting);
+                    //Debug.Log(SelectDifficultyButtons.completedWaves);
+                    EnemyFire.randomMax -= ((float)SelectDifficultyButtons.completedWaves * 0.075f);
+                    //Debug.Log(EnemyFire.randomMax);
                     EnemyFire.projectileSpeed = 3f;
                     EnergyBar.currentEnergy = 100f;
                     EnergyBar.maxEnergy = 200f;
-                    EnergyBar.damage = 10f;
-                    EnergyBar.heal = 100f;
+                    if (SelectDifficultyButtons.completedWaves > 4)
+                    {
+                        EnergyBar.currentEnergy = 50f;
+                        if (SelectDifficultyButtons.completedWaves > 9)
+                        {
+                            EnergyBar.currentEnergy = 25f;
+                        }
+                    }
+                    EnergyBar.damage = 20f;
+                    EnergyBar.heal = 20f;
                     SceneManager.LoadScene("Easy Wave 1");
                 }
             }
