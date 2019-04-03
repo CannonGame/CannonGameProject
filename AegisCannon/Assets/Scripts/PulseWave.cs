@@ -11,8 +11,6 @@ public class PulseWave : MonoBehaviour
     private AudioSource audio;
     public AudioClip pulse;
     public AudioClip charge;
-    public int completedWaves = 0;
-    public int difficultySetting;
 
     public Animator Animator { get => animator; set => animator = value; }
     public AudioSource Audio { get => audio; set => audio = value; }
@@ -20,7 +18,7 @@ public class PulseWave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();        
     }
     // Constantly checks if Energy Shield is at max. If it is, calls coroutine.
     void FixedUpdate()
@@ -46,22 +44,26 @@ public class PulseWave : MonoBehaviour
             yield return new WaitForSeconds(.4f);
             animator.enabled = false;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            completedWaves += 1;
-            difficultySetting = SelectDifficultyButtons.GetDifficultySetting();
+            SelectDifficultyButtons.completedWaves++;
 
-            if (completedWaves != 15)
+            // Calls new waves of increased difficulty until boss fight is reached
+
+            if (SelectDifficultyButtons.completedWaves != 15)
             {
-                if (difficultySetting == 1)
+                if (SelectDifficultyButtons.difficultySetting == 1)
                 {
                     yield return new WaitForSeconds(1.5f);
-                    SceneManager.LoadScene("Easy Wave 1");
-                    EnemyFire.randomMin = 3f;
+                    EnemyFire.randomMin = 3.00f - (((float)SelectDifficultyButtons.difficultySetting * 0.10f) + ((float)SelectDifficultyButtons.completedWaves * 0.10f));
+                    Debug.Log(EnemyFire.randomMin);
+                    Debug.Log(SelectDifficultyButtons.difficultySetting);
+                    Debug.Log(SelectDifficultyButtons.completedWaves);
                     EnemyFire.randomMax = 6f;
                     EnemyFire.projectileSpeed = 3f;
                     EnergyBar.currentEnergy = 100f;
                     EnergyBar.maxEnergy = 200f;
                     EnergyBar.damage = 10f;
                     EnergyBar.heal = 100f;
+                    SceneManager.LoadScene("Easy Wave 1");
                 }
             }
         }

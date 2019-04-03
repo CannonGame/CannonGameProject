@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SelectDifficultyButtons: MonoBehaviour
+public class SelectDifficultyButtons : MonoBehaviour
 {
     // Fields
     public static int difficultySetting = 0;
+    public static int completedWaves;
 
     // Loads Easy Mode Wave 1. Changes static variables to adjust difficulty.
     public void EasyButton()
     {
         difficultySetting = 1;
+        completedWaves = 0;
         SceneManager.LoadScene("Easy Wave 1");
         EnemyFire.randomMin = 3f;
         EnemyFire.randomMax = 6f;
-        EnemyFire.projectileSpeed = 3f;        
+        EnemyFire.projectileSpeed = 3f;
         EnergyBar.currentEnergy = 100f;
         EnergyBar.maxEnergy = 200f;
         EnergyBar.damage = 10f;
@@ -26,6 +28,7 @@ public class SelectDifficultyButtons: MonoBehaviour
     public void MediumButton()
     {
         difficultySetting = 2;
+        completedWaves = 0;
         SceneManager.LoadScene("Medium Wave 1");
         EnemyFire.randomMin = 2f;
         EnemyFire.randomMax = 5f;
@@ -41,6 +44,7 @@ public class SelectDifficultyButtons: MonoBehaviour
     public void HardButton()
     {
         difficultySetting = 3;
+        completedWaves = 0;
         SceneManager.LoadScene("Hard Wave 1");
         EnemyFire.randomMin = 1f;
         EnemyFire.randomMax = 4f;
@@ -55,6 +59,7 @@ public class SelectDifficultyButtons: MonoBehaviour
     public void EndlessButton()
     {
         difficultySetting = 4;
+        completedWaves = 0;
         SceneManager.LoadScene("Endless Wave 1");
         EnemyFire.randomMin = 2f;
         EnemyFire.randomMax = 6f;
@@ -69,11 +74,5 @@ public class SelectDifficultyButtons: MonoBehaviour
     public void HomeButtonClick()
     {
         SceneManager.LoadScene("HomeScreen");
-    }
-
-    // difficultySetting getter
-    public static int GetDifficultySetting()
-    {
-        return difficultySetting;
     }
 }

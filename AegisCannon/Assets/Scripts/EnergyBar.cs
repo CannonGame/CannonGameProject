@@ -14,7 +14,6 @@ public class EnergyBar : MonoBehaviour
     public static float currentHealth;
     public static float maxHealth = 100;
     public GameObject energyCircle;
-    public int difficultySetting;
 
     // Sets max energy and health. Sets current energy and health to max. Adjusts slider according to percentage.
     void Start()
@@ -47,13 +46,11 @@ public class EnergyBar : MonoBehaviour
     // Deals damage to health if there is no energy shield left. Does not allow to go below zero.
     void DamageHealth()
     {
-        difficultySetting = SelectDifficultyButtons.GetDifficultySetting();
-
-        if (difficultySetting == 1)
+        if (SelectDifficultyButtons.difficultySetting == 1)
         {
             currentHealth -= (maxHealth / 4);
         }
-        else if (difficultySetting == 3) 
+        else if (SelectDifficultyButtons.difficultySetting == 3) 
         {
             currentHealth -= (maxHealth / 2);
         }

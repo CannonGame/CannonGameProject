@@ -8,10 +8,15 @@ public class StartGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // This will lead to the Main Menu Scene once implemented.
+        // Leads to Main Menu after a delay
         if (Input.anyKeyDown || Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("HomeScreen");
+            Invoke("SceneDelay", 1);
         }
+    }
+
+    void SceneDelay()
+    {
+        SceneManager.LoadScene("HomeScreen");
     }
 }

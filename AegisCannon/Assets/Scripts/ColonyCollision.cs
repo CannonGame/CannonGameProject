@@ -15,7 +15,7 @@ public class ColonyCollision : MonoBehaviour
     void Update()
     {
         // If shield is true change colony to turqoise
-        if (ShieldCollision.GetShield())
+        if (ShieldCollision.shield)
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = shieldCharge;
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShieldCollision : MonoBehaviour
 {
     // Fields
-    static bool shield = false;
+    public static bool shield = false;
     float timer = 0.5f;
     float delay = 0.5f;
 
@@ -32,10 +32,5 @@ public class ShieldCollision : MonoBehaviour
         //Debug.Log("Blocked");
         shield = true;
         timer = delay;
-    }
-    
-    public static bool GetShield()
-    {
-        return shield;
     }
 }
