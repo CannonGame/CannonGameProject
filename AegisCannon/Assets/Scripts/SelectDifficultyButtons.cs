@@ -30,13 +30,13 @@ public class SelectDifficultyButtons : MonoBehaviour
         difficultySetting = 2;
         completedWaves = 0;
         SceneManager.LoadScene("Medium Wave 1");
-        EnemyFire.randomMin = 2f;
-        EnemyFire.randomMax = 5f;
-        EnemyFire.projectileSpeed = 4f;
-        EnergyBar.maxEnergy = 175f;
-        EnergyBar.currentEnergy = 44f;
-        EnergyBar.damage = 12f;
-        EnergyBar.heal = 10f;
+        EnemyFire.randomMin = 4f;
+        EnemyFire.randomMax = 8f;
+        EnemyFire.projectileSpeed = 3.5f;
+        EnergyBar.maxEnergy = 200f;
+        EnergyBar.currentEnergy = 50f;
+        EnergyBar.damage = 25f;
+        EnergyBar.heal = 25f;
 
     }
 
@@ -46,13 +46,13 @@ public class SelectDifficultyButtons : MonoBehaviour
         difficultySetting = 3;
         completedWaves = 0;
         SceneManager.LoadScene("Hard Wave 1");
-        EnemyFire.randomMin = 1f;
-        EnemyFire.randomMax = 4f;
-        EnemyFire.projectileSpeed = 4.5f;
+        EnemyFire.randomMin = 3f;
+        EnemyFire.randomMax = 6f;
+        EnemyFire.projectileSpeed = 4f;
         EnergyBar.currentEnergy = 0f;
-        EnergyBar.maxEnergy = 150f;
-        EnergyBar.damage = 15f;
-        EnergyBar.heal = 10f;
+        EnergyBar.maxEnergy = 200f;
+        EnergyBar.damage = 25f;
+        EnergyBar.heal = 25f;
     }
 
     // Loads Endless Mode Wave 1.
@@ -65,9 +65,9 @@ public class SelectDifficultyButtons : MonoBehaviour
         EnemyFire.randomMax = 6f;
         EnemyFire.projectileSpeed = 3.5f;
         EnergyBar.currentEnergy = 0f;
-        EnergyBar.maxEnergy = 200f;
-        EnergyBar.damage = 10f;
-        EnergyBar.heal = 10f;
+        EnergyBar.maxEnergy = 100f;
+        EnergyBar.damage = 20f;
+        EnergyBar.heal = 20f;
     }
 
     //When Home button is hit it takes you to the home screen

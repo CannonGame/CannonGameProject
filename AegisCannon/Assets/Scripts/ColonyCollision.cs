@@ -8,8 +8,8 @@ public class ColonyCollision : MonoBehaviour
     public Sprite spaceColony;
     public Sprite spaceColonyHit;
     public Sprite shieldCharge;
-    float timer = 0.5f;
-    float delay = 0.5f;
+    float timer = 0.25f;
+    float delay = 0.25f;
 
     // Update is called once per frame
     void Update()

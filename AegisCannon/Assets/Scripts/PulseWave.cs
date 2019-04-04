@@ -48,7 +48,7 @@ public class PulseWave : MonoBehaviour
 
             // Calls new waves of increased difficulty until boss fight is reached
 
-            if (SelectDifficultyButtons.completedWaves != 15)
+            if (SelectDifficultyButtons.completedWaves != 15 && SelectDifficultyButtons.difficultySetting != 4)
             {
                 if (SelectDifficultyButtons.difficultySetting == 1)
                 {
@@ -74,6 +74,64 @@ public class PulseWave : MonoBehaviour
                     EnergyBar.heal = 20f;
                     SceneManager.LoadScene("Easy Wave 1");
                 }
+                if (SelectDifficultyButtons.difficultySetting == 2)
+                {
+                    yield return new WaitForSeconds(1.5f);
+                    EnemyFire.randomMin -= ((float)SelectDifficultyButtons.completedWaves * 0.085f);
+                    //Debug.Log(EnemyFire.randomMin);
+                    //Debug.Log(SelectDifficultyButtons.difficultySetting);
+                    //Debug.Log(SelectDifficultyButtons.completedWaves);
+                    EnemyFire.randomMax -= ((float)SelectDifficultyButtons.completedWaves * 0.085f);
+                    //Debug.Log(EnemyFire.randomMax);
+                    EnemyFire.projectileSpeed = 3f;
+                    EnergyBar.currentEnergy = 50f;
+                    EnergyBar.maxEnergy = 200f;
+                    if (SelectDifficultyButtons.completedWaves > 4)
+                    {
+                        EnergyBar.currentEnergy = 25f;
+                        if (SelectDifficultyButtons.completedWaves > 9)
+                        {
+                            EnergyBar.currentEnergy = 0f;
+                        }
+                    }
+                    EnergyBar.damage = 25f;
+                    EnergyBar.heal = 25f;
+                    SceneManager.LoadScene("Medium Wave 1");
+                }
+                if (SelectDifficultyButtons.difficultySetting == 3)
+                {
+                    yield return new WaitForSeconds(1.5f);
+                    EnemyFire.randomMin -= ((float)SelectDifficultyButtons.completedWaves * 0.1f);
+                    //Debug.Log(EnemyFire.randomMin);
+                    //Debug.Log(SelectDifficultyButtons.difficultySetting);
+                    //Debug.Log(SelectDifficultyButtons.completedWaves);
+                    EnemyFire.randomMax -= ((float)SelectDifficultyButtons.completedWaves * 0.1f);
+                    //Debug.Log(EnemyFire.randomMax);
+                    EnemyFire.projectileSpeed = 3f;
+                    EnergyBar.currentEnergy = 0f;
+                    EnergyBar.maxEnergy = 200f;
+                    if (SelectDifficultyButtons.completedWaves > 4)
+                    {
+                        EnergyBar.damage = 30f;
+                        EnergyBar.heal = 20f;
+                        if (SelectDifficultyButtons.completedWaves > 9)
+                        {
+                            EnergyBar.damage = 35f;
+                            EnergyBar.heal = 15f;
+                        }
+                    }
+                    SceneManager.LoadScene("Hard Wave 1");
+                }
+            }
+            // Boss level
+            if (SelectDifficultyButtons.completedWaves >= 15 && SelectDifficultyButtons.difficultySetting != 4)
+            {
+                // Boss level stuff goes here
+            }
+            // Endless Waves
+            if (SelectDifficultyButtons.difficultySetting == 4)
+            {
+                // Endless waves
             }
         }
     }
