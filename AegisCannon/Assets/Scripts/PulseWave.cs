@@ -131,7 +131,28 @@ public class PulseWave : MonoBehaviour
             // Endless Waves
             if (SelectDifficultyButtons.difficultySetting == 4)
             {
-                // Endless waves
+                yield return new WaitForSeconds(1.5f);
+                EnemyFire.randomMin = 1f;
+                //Debug.Log(EnemyFire.randomMin);
+                //Debug.Log(SelectDifficultyButtons.difficultySetting);
+                //Debug.Log(SelectDifficultyButtons.completedWaves);
+                EnemyFire.randomMax -= ((float)SelectDifficultyButtons.completedWaves * 0.1f);
+                if (EnemyFire.randomMax <= 1.5f)
+                {
+                    EnemyFire.randomMax = 1.5f;
+                    EnemyFire.randomMin = 0.5f;
+                }
+                //Debug.Log(EnemyFire.randomMax);
+                EnemyFire.projectileSpeed = 3f;
+                EnergyBar.currentEnergy = 0f;
+                EnergyBar.maxEnergy = 100f;
+                if (SelectDifficultyButtons.completedWaves % 5 == 0)
+                {
+                    EnergyBar.maxEnergy += 25f;
+                }
+                EnergyBar.damage = 25f;
+                EnergyBar.heal = 25f;
+                SceneManager.LoadScene("Endless Wave 1");
             }
         }
     }

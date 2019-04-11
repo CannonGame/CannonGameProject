@@ -61,13 +61,13 @@ public class SelectDifficultyButtons : MonoBehaviour
         difficultySetting = 4;
         completedWaves = 0;
         SceneManager.LoadScene("Endless Wave 1");
-        EnemyFire.randomMin = 2f;
-        EnemyFire.randomMax = 6f;
+        EnemyFire.randomMin = 1f;
+        EnemyFire.randomMax = 10f;
         EnemyFire.projectileSpeed = 3.5f;
         EnergyBar.currentEnergy = 0f;
         EnergyBar.maxEnergy = 100f;
-        EnergyBar.damage = 20f;
-        EnergyBar.heal = 20f;
+        EnergyBar.damage = 25f;
+        EnergyBar.heal = 25f;
     }
 
     //When Home button is hit it takes you to the home screen
