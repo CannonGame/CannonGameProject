@@ -15,6 +15,7 @@ public class EnemyFire : MonoBehaviour
     public bool preparingToFire = false;
     public bool firing = false;
     public bool shouldFire = true;
+    public int enemyShipFire;
 
     // Start is called before the first frame update. Gets Animator Component and Starts infinite Coroutine to make enemies fire.
     void Start()
@@ -32,28 +33,28 @@ public class EnemyFire : MonoBehaviour
     // Called once per frame. Checks which enemy ship was assigned to fire. Sets all other enemy ships to not fire.
     void Update()
     {
-        if (GameObject.Find("EnemyShip").GetComponent<EnemyFire>().preparingToFire)
+        if (enemyShipFire == 0)
         {
             GameObject.Find("EnemyShip").GetComponent<EnemyFire>().firing = true;
             GameObject.Find("EnemyShip (1)").GetComponent<EnemyFire>().firing = false;
             GameObject.Find("EnemyShip (2)").GetComponent<EnemyFire>().firing = false;
             GameObject.Find("EnemyShip (3)").GetComponent<EnemyFire>().firing = false;
         }
-        if (GameObject.Find("EnemyShip (1)").GetComponent<EnemyFire>().preparingToFire)
+        if (enemyShipFire == 1)
         {
             GameObject.Find("EnemyShip (1)").GetComponent<EnemyFire>().firing = true;
             GameObject.Find("EnemyShip").GetComponent<EnemyFire>().firing = false;
             GameObject.Find("EnemyShip (2)").GetComponent<EnemyFire>().firing = false;
             GameObject.Find("EnemyShip (3)").GetComponent<EnemyFire>().firing = false;
         }
-        if (GameObject.Find("EnemyShip (2)").GetComponent<EnemyFire>().preparingToFire)
+        if (enemyShipFire == 2)
         {
             GameObject.Find("EnemyShip (2)").GetComponent<EnemyFire>().firing = true;
             GameObject.Find("EnemyShip").GetComponent<EnemyFire>().firing = false;
             GameObject.Find("EnemyShip (1)").GetComponent<EnemyFire>().firing = false;
             GameObject.Find("EnemyShip (3)").GetComponent<EnemyFire>().firing = false;
         }
-        if (GameObject.Find("EnemyShip (3)").GetComponent<EnemyFire>().preparingToFire)
+        if (enemyShipFire == 3)
         {
             GameObject.Find("EnemyShip (3)").GetComponent<EnemyFire>().firing = true;
             GameObject.Find("EnemyShip").GetComponent<EnemyFire>().firing = false;
@@ -71,6 +72,7 @@ public class EnemyFire : MonoBehaviour
         {
             if (shouldFire)
             {
+                enemyShipFire = Random.Range(0, 4);
                 yield return new WaitForSeconds(Random.Range(randomMin, randomMax));
                 preparingToFire = true;
                 if (firing)
