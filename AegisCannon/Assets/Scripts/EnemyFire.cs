@@ -16,6 +16,7 @@ public class EnemyFire : MonoBehaviour
     public bool firing = false;
     public bool shouldFire = true;
     public int enemyShipFire;
+    public static bool shipAlive = true;
 
     // Start is called before the first frame update. Gets Animator Component and Starts infinite Coroutine to make enemies fire.
     void Start()
@@ -33,28 +34,28 @@ public class EnemyFire : MonoBehaviour
     // Called once per frame. Checks which enemy ship was assigned to fire. Sets all other enemy ships to not fire.
     void Update()
     {
-        if (enemyShipFire == 0)
+        if (enemyShipFire == 0 && shipAlive)
         {
             GameObject.Find("EnemyShip").GetComponent<EnemyFire>().firing = true;
             GameObject.Find("EnemyShip (1)").GetComponent<EnemyFire>().firing = false;
             GameObject.Find("EnemyShip (2)").GetComponent<EnemyFire>().firing = false;
             GameObject.Find("EnemyShip (3)").GetComponent<EnemyFire>().firing = false;
         }
-        if (enemyShipFire == 1)
+        if (enemyShipFire == 1 && shipAlive)
         {
             GameObject.Find("EnemyShip (1)").GetComponent<EnemyFire>().firing = true;
             GameObject.Find("EnemyShip").GetComponent<EnemyFire>().firing = false;
             GameObject.Find("EnemyShip (2)").GetComponent<EnemyFire>().firing = false;
             GameObject.Find("EnemyShip (3)").GetComponent<EnemyFire>().firing = false;
         }
-        if (enemyShipFire == 2)
+        if (enemyShipFire == 2 && shipAlive )
         {
             GameObject.Find("EnemyShip (2)").GetComponent<EnemyFire>().firing = true;
             GameObject.Find("EnemyShip").GetComponent<EnemyFire>().firing = false;
             GameObject.Find("EnemyShip (1)").GetComponent<EnemyFire>().firing = false;
             GameObject.Find("EnemyShip (3)").GetComponent<EnemyFire>().firing = false;
         }
-        if (enemyShipFire == 3)
+        if (enemyShipFire == 3 && shipAlive)
         {
             GameObject.Find("EnemyShip (3)").GetComponent<EnemyFire>().firing = true;
             GameObject.Find("EnemyShip").GetComponent<EnemyFire>().firing = false;
@@ -68,7 +69,7 @@ public class EnemyFire : MonoBehaviour
         sets preparingToFire, firing, and shouldFire to false, waits random amount of time, then sets shouldFire back to true. This way we can control multiple ships with this one script*/
     public IEnumerator StartFire()
     {
-        while (true)
+        while (true && shipAlive)
         {
             if (shouldFire)
             {

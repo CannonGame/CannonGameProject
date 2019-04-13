@@ -16,6 +16,7 @@ public class DestroyShip : MonoBehaviour
     {
         if (col.gameObject.tag == "ShieldCircle")
         {
+            EnemyFire.shipAlive = false;
             animator.Play("EnemyDie");
             Debug.Log("HIT");
             Destroy(gameObject, .5f);
