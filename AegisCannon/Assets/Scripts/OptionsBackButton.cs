@@ -6,13 +6,8 @@ using UnityEngine.SceneManagement;
 public class OptionsBackButton : MonoBehaviour
 {
 
-    // Update is called once per frame
-    void Update()
+    public void BackButton()
     {
-        //Returns to Home Screen
-        if (Input.anyKeyDown || Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene("HomeScreen");
-        }
+        SceneManager.LoadScene("HomeScreen");
     }
 }
