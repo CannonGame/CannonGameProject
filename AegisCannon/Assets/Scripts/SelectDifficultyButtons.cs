@@ -12,6 +12,9 @@ public class SelectDifficultyButtons : MonoBehaviour
     // Loads Easy Mode Wave 1. Changes static variables to adjust difficulty.
     public void EasyButton()
     {
+        //Added by DH, changes music to in-game BGM
+        SwitchBGM.trackSelect = 2;
+
         difficultySetting = 1;
         completedWaves = 0;
         SceneManager.LoadScene("Easy Wave 1");
@@ -27,6 +30,9 @@ public class SelectDifficultyButtons : MonoBehaviour
     // Loads Medium Mode Wave 1.
     public void MediumButton()
     {
+        //Added by DH, changes music to in-game BGM
+        SwitchBGM.trackSelect = 2;
+
         difficultySetting = 2;
         completedWaves = 0;
         SceneManager.LoadScene("Medium Wave 1");
@@ -43,7 +49,9 @@ public class SelectDifficultyButtons : MonoBehaviour
     // Loads Hard Mode Wave 1.
     public void HardButton()
     {
+        //Added by DH, changes music to in-game BGM
         SwitchBGM.trackSelect = 2;
+
         SceneManager.LoadScene("Hard Wave 1");
         EnemyFire.randomMin = 3f;
         EnemyFire.randomMax = 6f;
@@ -58,6 +66,7 @@ public class SelectDifficultyButtons : MonoBehaviour
     public void EndlessButton()
     {
         SwitchBGM.trackSelect = 2;
+
         SceneManager.LoadScene("Endless Wave 1");
         EnemyFire.randomMin = 1f;
         EnemyFire.randomMax = 10f;
