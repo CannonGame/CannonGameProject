@@ -41,7 +41,8 @@ public class SelectDifficultyButtons: MonoBehaviour
 
     // Loads Hard Mode Wave 1.
     public void HardButton()
-    { 
+    {
+        SwitchBGM.trackSelect = 2;
         SceneManager.LoadScene("Hard Wave 1");
         EnemyFire.randomMin = 3f;
         EnemyFire.randomMax = 7f;
@@ -56,6 +57,7 @@ public class SelectDifficultyButtons: MonoBehaviour
     // Loads Endless Mode Wave 1.
     public void EndlessButton()
     {
+        SwitchBGM.trackSelect = 2;
         SceneManager.LoadScene("Endless Wave 1");
         EnemyFire.randomMin = 5f;
         EnemyFire.randomMax = 10f;
