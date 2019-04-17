@@ -11,27 +11,12 @@ public class BGMScript : MonoBehaviour
     {
         
     }
-   //control the number of active BGM managers
-    //public static BGMScript instance = null;
-    //public static BGMScript Instance
-    //{
-    //    get { return instance; }
-    //}
+
 
     private void Awake()
     {
-        //if the instance doesnt exist, destroy it? might have to re-think this spot
-        //if (instance != null && instance != this)
-        //{
-        //    Destroy(this.gameObject);
-        //}
-        //else
-        //{
-        //    instance = this;
-        //}
 
-
-        }
+    }
 
     private void Update()
     {

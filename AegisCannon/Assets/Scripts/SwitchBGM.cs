@@ -16,9 +16,9 @@ public class SwitchBGM : MonoBehaviour
     {
         //play songs and make sure the others stop.
         if (trackSelect == 0) {
-            MenuBGM.Play();
             LossBGM.Stop();
             BGM.Stop();
+            MenuBGM.Play();
         }
         else if (trackSelect == 1) {
             MenuBGM.Stop();

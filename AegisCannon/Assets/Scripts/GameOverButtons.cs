@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameOverButtons : MonoBehaviour
 {
-    //switch BGM to Game Over Music - DH
+    
     private void Start()
     {
+        //switch BGM to Game Over Music on load - DH
         SwitchBGM.trackSelect = 1;
     }
     // Starts current game over at wave 1.
