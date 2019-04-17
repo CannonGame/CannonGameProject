@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class BGMScript : MonoBehaviour
 {
+    public static AudioSource BGM;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
-    private static BGMScript instance = null;
+   //control the number of active BGM managers
+    public static BGMScript instance = null;
     public static BGMScript Instance
     {
         get { return instance; }
@@ -18,6 +20,7 @@ public class BGMScript : MonoBehaviour
 
     private void Awake()
     {
+        //if the instance doesnt exist, destroy it? might have to re-think this spot
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -27,6 +30,18 @@ public class BGMScript : MonoBehaviour
             instance = this;
         }
 
-        DontDestroyOnLoad(this.gameObject);
-    }
+        //tried doing this to combat one of my multitude of issues
+        while (SwitchBGM.trackSelect == 0)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            if (SwitchBGM.trackSelect >= 1)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+        }
+        }
+
+
+
 }

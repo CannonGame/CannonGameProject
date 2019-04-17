@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameOverButtons : MonoBehaviour
 {
+    //switch BGM to Game Over Music - DH
+    private void Start()
+    {
+        SwitchBGM.trackSelect = 1;
+    }
     // Starts current game over at wave 1.
     public void RetryButton()
     {
@@ -13,6 +18,7 @@ public class GameOverButtons : MonoBehaviour
     // Takes user to HomeScreen Scene.
     public void HomeButton()
     {
+        SwitchBGM.trackSelect = 0;
         SceneManager.LoadScene("HomeScreen");
     }
 
