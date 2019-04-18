@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BGMScript : MonoBehaviour
 {
+    //declare BGM object
     public static AudioSource BGM;
 
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class BGMScript : MonoBehaviour
 
     private void Update()
     {
-        //tried doing this to combat one of my multitude of issues
+        //Keep menu BGM between screens, not between game scenes, like game over, etc
         if (SwitchBGM.trackSelect == 0)
         {
             DontDestroyOnLoad(this.gameObject);
