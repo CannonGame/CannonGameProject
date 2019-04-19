@@ -14,7 +14,7 @@ public class SelectDifficultyButtons : MonoBehaviour
     {
         //Added by DH, changes music to in-game BGM
         SwitchBGM.trackSelect = 2;
-
+        Time.timeScale = 1;
         difficultySetting = 1;
         completedWaves = 0;
         SceneManager.LoadScene("Easy Wave 1");
@@ -32,7 +32,7 @@ public class SelectDifficultyButtons : MonoBehaviour
     {
         //Added by DH, changes music to in-game BGM
         SwitchBGM.trackSelect = 2;
-
+        Time.timeScale = 1;
         difficultySetting = 2;
         completedWaves = 0;
         SceneManager.LoadScene("Medium Wave 1");
@@ -50,7 +50,7 @@ public class SelectDifficultyButtons : MonoBehaviour
     public void HardButton()
     {//Added by DH, changes music to in-game BGM
         SwitchBGM.trackSelect = 2;
-
+        Time.timeScale = 1;
         difficultySetting = 3;
         completedWaves = 0;
         SceneManager.LoadScene("Hard Wave 1");
@@ -67,7 +67,7 @@ public class SelectDifficultyButtons : MonoBehaviour
     public void EndlessButton()
     {
         SwitchBGM.trackSelect = 2;
-
+        Time.timeScale = 1;
         difficultySetting = 4;
         completedWaves = 0;
         SceneManager.LoadScene("Endless Wave 1");
