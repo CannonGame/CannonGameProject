@@ -8,7 +8,19 @@ public class GameTimer : MonoBehaviour
     public Text gameTimerText;
     float gameTimer=0f;
 
-    // Update is called once per frame
+
+
+    //Makes timer persist through scenes.
+    public void Awake()
+    {
+        DontDestroyOnLoad(this);
+
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     //Creates Timer
     void Update(){
         gameTimer += Time.deltaTime;
