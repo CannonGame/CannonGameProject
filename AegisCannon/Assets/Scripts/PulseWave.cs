@@ -54,11 +54,7 @@ public class PulseWave : MonoBehaviour
                 {
                     yield return new WaitForSeconds(1.5f);
                     EnemyFire.randomMin -=  ((float)SelectDifficultyButtons.completedWaves * 0.075f);
-                    //Debug.Log(EnemyFire.randomMin);
-                    //Debug.Log(SelectDifficultyButtons.difficultySetting);
-                    //Debug.Log(SelectDifficultyButtons.completedWaves);
                     EnemyFire.randomMax -= ((float)SelectDifficultyButtons.completedWaves * 0.075f);
-                    //Debug.Log(EnemyFire.randomMax);
                     EnemyFire.projectileSpeed = 3f;
                     EnergyBar.currentEnergy = 100f;
                     EnergyBar.maxEnergy = 200f;
@@ -78,11 +74,7 @@ public class PulseWave : MonoBehaviour
                 {
                     yield return new WaitForSeconds(1.5f);
                     EnemyFire.randomMin -= ((float)SelectDifficultyButtons.completedWaves * 0.085f);
-                    //Debug.Log(EnemyFire.randomMin);
-                    //Debug.Log(SelectDifficultyButtons.difficultySetting);
-                    //Debug.Log(SelectDifficultyButtons.completedWaves);
                     EnemyFire.randomMax -= ((float)SelectDifficultyButtons.completedWaves * 0.085f);
-                    //Debug.Log(EnemyFire.randomMax);
                     EnemyFire.projectileSpeed = 3f;
                     EnergyBar.currentEnergy = 50f;
                     EnergyBar.maxEnergy = 200f;
@@ -102,11 +94,7 @@ public class PulseWave : MonoBehaviour
                 {
                     yield return new WaitForSeconds(1.5f);
                     EnemyFire.randomMin -= ((float)SelectDifficultyButtons.completedWaves * 0.1f);
-                    //Debug.Log(EnemyFire.randomMin);
-                    //Debug.Log(SelectDifficultyButtons.difficultySetting);
-                    //Debug.Log(SelectDifficultyButtons.completedWaves);
                     EnemyFire.randomMax -= ((float)SelectDifficultyButtons.completedWaves * 0.1f);
-                    //Debug.Log(EnemyFire.randomMax);
                     EnemyFire.projectileSpeed = 3f;
                     EnergyBar.currentEnergy = 0f;
                     EnergyBar.maxEnergy = 200f;
@@ -123,13 +111,15 @@ public class PulseWave : MonoBehaviour
                     SceneManager.LoadScene("Hard Wave 1");
                 }
             }
+            if(SelectDifficultyButtons.difficultySetting != 4 && SelectDifficultyButtons.completedWaves == 15)
+            {
+                SceneManager.LoadScene("WinScreen");
+            }
             // Endless Waves
             if (SelectDifficultyButtons.difficultySetting == 4)
             {
                 yield return new WaitForSeconds(1.5f);
                 EnemyFire.randomMin = 1f;
-                //Debug.Log(EnemyFire.randomMin);
-                //Debug.Log(SelectDifficultyButtons.difficultySetting);
                 Debug.Log(SelectDifficultyButtons.completedWaves);
                 EnemyFire.randomMax -= ((float)SelectDifficultyButtons.completedWaves * 0.1f);
                 if (EnemyFire.randomMax <= 1.5f)
