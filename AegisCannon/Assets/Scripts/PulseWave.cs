@@ -11,7 +11,6 @@ public class PulseWave : MonoBehaviour
     private AudioSource audio;
     public AudioClip pulse;
     public AudioClip charge;
-    public static bool bossAlive = true;
 
     public Animator Animator { get => animator; set => animator = value; }
     public AudioSource Audio { get => audio; set => audio = value; }
@@ -124,12 +123,6 @@ public class PulseWave : MonoBehaviour
                     SceneManager.LoadScene("Hard Wave 1");
                 }
             }
-            // Boss level
-            if (SelectDifficultyButtons.completedWaves >= 15 && SelectDifficultyButtons.difficultySetting != 4)
-            {
-                // Boss level stuff goes here
-                SceneManager.LoadScene("BossScene");
-            }
             // Endless Waves
             if (SelectDifficultyButtons.difficultySetting == 4)
             {
@@ -156,6 +149,7 @@ public class PulseWave : MonoBehaviour
                 EnergyBar.heal = 25f;
                 SceneManager.LoadScene("Endless Wave 1");
             }
+            EnemyFire.shipAlive = true;
         }
     }
 }

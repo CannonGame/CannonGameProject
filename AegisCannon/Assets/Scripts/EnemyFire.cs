@@ -8,7 +8,7 @@ public class EnemyFire : MonoBehaviour
     Animator animator;
     public float delay = 1.5f;
     public static float randomMin = 3f;
-    public static float randomMax = 8f;
+    public static float randomMax = 4f;
     public static float projectileSpeed = 3f;
     public Transform shipTransform;
     public Rigidbody2D projectileBody;
@@ -76,7 +76,7 @@ public class EnemyFire : MonoBehaviour
                 enemyShipFire = Random.Range(0, 4);
                 yield return new WaitForSeconds(Random.Range(randomMin, randomMax));
                 preparingToFire = true;
-                if (firing)
+                if (preparingToFire && firing)
                 {
                     animator.SetBool("Firing", true);
                     yield return new WaitForSeconds(delay);
@@ -85,7 +85,7 @@ public class EnemyFire : MonoBehaviour
                     firing = false;
                     shouldFire = false;
                     preparingToFire = false;
-                    yield return new WaitForSeconds(Random.Range(5,15));
+                    yield return new WaitForSeconds(2);
                     shouldFire = true;
                 }
             }
