@@ -10,6 +10,7 @@ public class ColonyCollision : MonoBehaviour
     public Sprite shieldCharge;
     float timer = 0.25f;
     float delay = 0.25f;
+    public static int bestHitStreak = 0;
 
     // Update is called once per frame
     void Update()
@@ -38,9 +39,17 @@ public class ColonyCollision : MonoBehaviour
     //When an enemy bullet collides with colony, health is lost and colony flashes red.
     void OnTriggerEnter2D(Collider2D col)
     {
-        //Debug.Log("HIT");
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = spaceColonyHit;
-        timer = delay;
+        if (EnergyBar.currentHealth > 0)
+        {
+            //Debug.Log("HIT");
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = spaceColonyHit;
+            timer = delay;
+            if (ShieldCollision.hitStreak > bestHitStreak)
+            {
+                bestHitStreak = ShieldCollision.hitStreak;
+            }
+            ShieldCollision.hitStreak = 0;
+        }
     }
 
 

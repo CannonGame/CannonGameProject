@@ -13,6 +13,7 @@ public class SelectDifficultyButtons : MonoBehaviour
     public void EasyButton()
     {
         difficultySetting = 1;
+        ColonyExplosion.playAnimation = false;
         completedWaves = 0;
         SceneManager.LoadScene("Easy Wave 1");
         EnemyFire.randomMin = 6f;
@@ -28,6 +29,7 @@ public class SelectDifficultyButtons : MonoBehaviour
     public void MediumButton()
     {
         difficultySetting = 2;
+        ColonyExplosion.playAnimation = false;
         completedWaves = 0;
         SceneManager.LoadScene("Medium Wave 1");
         EnemyFire.randomMin = 4f;
@@ -44,6 +46,7 @@ public class SelectDifficultyButtons : MonoBehaviour
     public void HardButton()
     {
         difficultySetting = 3;
+        ColonyExplosion.playAnimation = false;
         completedWaves = 0;
         SceneManager.LoadScene("Hard Wave 1");
         EnemyFire.randomMin = 3f;
@@ -59,6 +62,7 @@ public class SelectDifficultyButtons : MonoBehaviour
     public void EndlessButton()
     {
         difficultySetting = 4;
+        ColonyExplosion.playAnimation = false;
         completedWaves = 0;
         SceneManager.LoadScene("Endless Wave 1");
         EnemyFire.randomMin = 1f;
