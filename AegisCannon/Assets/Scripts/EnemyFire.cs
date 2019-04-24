@@ -74,10 +74,10 @@ public class EnemyFire : MonoBehaviour
             if (shouldFire)
             {
                 enemyShipFire = Random.Range(0, 4);
-                //Debug.Log(enemyShipFire);
+                Debug.Log(enemyShipFire);
                 yield return new WaitForSeconds(Random.Range(randomMin, randomMax));
                 preparingToFire = true;
-                if (firing)
+                if (preparingToFire && firing)
                 {
                     animator.SetBool("Firing", true);
                     yield return new WaitForSeconds(delay);
@@ -86,7 +86,7 @@ public class EnemyFire : MonoBehaviour
                     firing = false;
                     shouldFire = false;
                     preparingToFire = false;
-                    yield return new WaitForSeconds(Random.Range(5,15));
+                    yield return new WaitForSeconds(2);
                     shouldFire = true;
                 }
             }

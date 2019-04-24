@@ -23,9 +23,10 @@ public class ColonyExplosion : MonoBehaviour
             playAnimation = true;
             if (playAnimation)
             {
-                anim.SetTrigger("Destroy");
+                //anim.SetTrigger("Destroy");
                 playAnimation = false;
                 anim.Play("ColonyExplosion");
+
             }
         }
     }

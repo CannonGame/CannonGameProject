@@ -361,6 +361,7 @@ MonoBehaviour:
   preparingToFire: 0
   firing: 0
   shouldFire: 1
+  enemyShipFire: 0
 --- !u!61 &295703259
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1242,6 +1243,7 @@ MonoBehaviour:
   preparingToFire: 0
   firing: 0
   shouldFire: 1
+  enemyShipFire: 0
 --- !u!61 &1225990393
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1830,6 +1832,7 @@ MonoBehaviour:
   preparingToFire: 0
   firing: 0
   shouldFire: 1
+  enemyShipFire: 0
 --- !u!61 &1600261934
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2609,6 +2612,7 @@ MonoBehaviour:
   preparingToFire: 0
   firing: 0
   shouldFire: 1
+  enemyShipFire: 0
 --- !u!61 &2064352563
 BoxCollider2D:
   m_ObjectHideFlags: 0
