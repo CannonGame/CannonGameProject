@@ -14,6 +14,9 @@ public class EnergyBar : MonoBehaviour
     public static float currentHealth;
     public static float maxHealth = 100;
     public GameObject energyCircle;
+    //Declare SFX Objects - DH
+    SFXscript playerDeathSFX = new SFXscript();
+    SFXscript lowHealth = new SFXscript();
 
     // Sets max energy and health. Sets current energy and health to max. Adjusts slider according to percentage.
     void Start()
@@ -49,19 +52,36 @@ public class EnergyBar : MonoBehaviour
         if (SelectDifficultyButtons.difficultySetting == 1)
         {
             currentHealth -= (maxHealth / 4);
+            //Play Low Health Warning SFX - DH
+            if (currentHealth < 50)
+            {
+                lowHealth.PlayLowHealth();
+            }
         }
         else if (SelectDifficultyButtons.difficultySetting == 3) 
         {
             currentHealth -= (maxHealth / 2);
+            //Low Health Warning - DH
+            if (currentHealth <= 50)
+            {
+                lowHealth.PlayLowHealth();
+            }
         }
         else
         {
             currentHealth -= (maxHealth / 3);
+            //Low Heath Warning - DH
+            if (currentHealth < 50)
+            {
+                lowHealth.PlayLowHealth();
+            }
         }
 
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            //Play Explosion SFX - DH
+            playerDeathSFX.PlayBoom1();
         }
 
         healthBar.value = CalculateHealth();

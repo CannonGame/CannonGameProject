@@ -6,6 +6,9 @@ public class DestroyShip : MonoBehaviour
 {
     Animator animator;
     public GameObject energyCircle;
+    //SFX object - DH
+    SFXscript destroyEnemyShip = new SFXscript();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,8 @@ public class DestroyShip : MonoBehaviour
             animator.Play("EnemyDie");
             Debug.Log("HIT");
             Destroy(gameObject, .5f);
+            //Play SFX - DH
+            destroyEnemyShip.PlayBoom3();
         }
     }
 }
