@@ -17,8 +17,5 @@ public class ColonyAnim : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        anim.Play("ShieldDamage1");
-    }
+
 }

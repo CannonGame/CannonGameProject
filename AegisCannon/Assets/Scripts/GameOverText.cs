@@ -24,7 +24,7 @@ public class GameOverText : MonoBehaviour
         else
         {
             gameOverText.text = "Time: " + System.Environment.NewLine + 
-                "Waves Count: " + SelectDifficultyButtons.completedWaves + "Best Streak: " + ColonyCollision.bestHitStreak;
+                "Waves Count: " + SelectDifficultyButtons.completedWaves + System.Environment.NewLine + "Best Streak: " + ColonyCollision.bestHitStreak;
         }
     }
 

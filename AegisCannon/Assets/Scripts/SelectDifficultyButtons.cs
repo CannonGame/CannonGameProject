@@ -19,7 +19,7 @@ public class SelectDifficultyButtons : MonoBehaviour
         EnemyFire.randomMin = 6f;
         EnemyFire.randomMax = 10f;
         EnemyFire.projectileSpeed = 3f;
-        EnergyBar.currentEnergy = 0f;
+        EnergyBar.currentEnergy = 100f;
         EnergyBar.maxEnergy = 200f;
         EnergyBar.damage = 10f;
         EnergyBar.heal = 50f;

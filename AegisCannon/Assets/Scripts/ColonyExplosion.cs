@@ -30,4 +30,9 @@ public class ColonyExplosion : MonoBehaviour
             }
         }
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        anim.Play("ColonyDamage");
+        Debug.Log("Ship has been hit");
+    }
 }
