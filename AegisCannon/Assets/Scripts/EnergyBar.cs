@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EnergyBar : MonoBehaviour
@@ -28,6 +29,7 @@ public class EnergyBar : MonoBehaviour
     void FixedUpdate()
     {        
         TriggerWin();
+        TriggerLoss();
     }
 
     // Deals damage to energy shield. Does not allow energy shield to go below zero.
@@ -113,6 +115,21 @@ public class EnergyBar : MonoBehaviour
             GameObject.Find("PlayerShield").transform.localScale = new Vector3(0, 0, 0);
             FindObjectOfType<ShakeBehaviour>().TriggerShake();
 
+        }
+    }
+    // Method to check if current health drops to zero and calls game over screen if it is
+    void TriggerLoss()
+    {
+        if (currentHealth <= 0)
+        {
+            if (SelectDifficultyButtons.difficultySetting == 4)
+            {
+                SceneManager.LoadScene("EndlessOver");
+            }
+            else
+            {
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
 }

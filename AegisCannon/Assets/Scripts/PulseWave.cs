@@ -67,7 +67,7 @@ public class PulseWave : MonoBehaviour
                         }
                     }
                     EnergyBar.damage = 20f;
-                    EnergyBar.heal = 20f;
+                    EnergyBar.heal = 20f;                    
                     SceneManager.LoadScene("Easy Wave 1");
                 }
                 if (SelectDifficultyButtons.difficultySetting == 2)
@@ -139,7 +139,7 @@ public class PulseWave : MonoBehaviour
                 EnergyBar.heal = 25f;
                 SceneManager.LoadScene("Endless Wave 1");
             }
-            EnemyFire.shipAlive = true;
+            EnemyFire.shipAlive = true;            
         }
     }
 }

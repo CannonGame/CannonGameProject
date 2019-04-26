@@ -8,6 +8,7 @@ public class ShieldCollision : MonoBehaviour
     public static bool shield = false;
     float timer = 0.25f;
     float delay = 0.25f;
+    public static int hitStreak = 0;
 
     // Update is called once per frame
     void Update()
@@ -29,8 +30,12 @@ public class ShieldCollision : MonoBehaviour
     // When enemy bullet collides with shield, the shield is charged.
     void OnTriggerEnter2D(Collider2D col)
     {
-        //Debug.Log("Blocked");
-        shield = true;
-        timer = delay;
+        if (EnergyBar.currentHealth > 0)
+        {
+            //Debug.Log("Blocked");
+            shield = true;
+            timer = delay;
+            hitStreak++;
+        }
     }
 }

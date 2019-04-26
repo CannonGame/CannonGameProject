@@ -16,6 +16,7 @@ public class SelectDifficultyButtons : MonoBehaviour
         SwitchBGM.trackSelect = 2;
         Time.timeScale = 1;
         difficultySetting = 1;
+        ColonyExplosion.playAnimation = false;
         completedWaves = 0;
         SceneManager.LoadScene("Easy Wave 1");
         EnemyFire.randomMin = 6f;
@@ -34,6 +35,7 @@ public class SelectDifficultyButtons : MonoBehaviour
         SwitchBGM.trackSelect = 2;
         Time.timeScale = 1;
         difficultySetting = 2;
+        ColonyExplosion.playAnimation = false;
         completedWaves = 0;
         SceneManager.LoadScene("Medium Wave 1");
         EnemyFire.randomMin = 4f;
@@ -52,6 +54,7 @@ public class SelectDifficultyButtons : MonoBehaviour
         SwitchBGM.trackSelect = 2;
         Time.timeScale = 1;
         difficultySetting = 3;
+        ColonyExplosion.playAnimation = false;
         completedWaves = 0;
         SceneManager.LoadScene("Hard Wave 1");
         EnemyFire.randomMin = 3f;
@@ -69,6 +72,7 @@ public class SelectDifficultyButtons : MonoBehaviour
         SwitchBGM.trackSelect = 2;
         Time.timeScale = 1;
         difficultySetting = 4;
+        ColonyExplosion.playAnimation = false;
         completedWaves = 0;
         SceneManager.LoadScene("Endless Wave 1");
         EnemyFire.randomMin = 1f;
