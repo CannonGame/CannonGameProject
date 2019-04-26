@@ -11,6 +11,14 @@ public class ColonyCollision : MonoBehaviour
     float timer = 0.25f;
     float delay = 0.25f;
     public static int bestHitStreak = 0;
+    Animator anim;
+    bool isHit = false;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -19,11 +27,12 @@ public class ColonyCollision : MonoBehaviour
         if (ShieldCollision.shield)
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = shieldCharge;
+            anim.Play("ShieldCharge");
         }
 
         // When colony changes, start timer
         if(this.gameObject.GetComponent<SpriteRenderer>().sprite == spaceColonyHit || 
-            this.gameObject.GetComponent<SpriteRenderer>().sprite == shieldCharge)
+            this.gameObject.GetComponent<SpriteRenderer>().sprite == shieldCharge || isHit)
         {
             timer -= Time.deltaTime;
         }
@@ -31,9 +40,9 @@ public class ColonyCollision : MonoBehaviour
         // When timer is less than or equal to zero, change colony back
         if(timer <= 0)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = spaceColony;
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = spaceColony;            
             timer = delay;
-        }
+        }        
     }
 
     //When an enemy bullet collides with colony, health is lost and colony flashes red.
@@ -44,11 +53,15 @@ public class ColonyCollision : MonoBehaviour
             //Debug.Log("HIT");
             this.gameObject.GetComponent<SpriteRenderer>().sprite = spaceColonyHit;
             timer = delay;
+            anim.Play("ColonyDamage");
+            isHit = true;
+            Debug.Log("Ship has been hit");
             if (ShieldCollision.hitStreak > bestHitStreak)
             {
                 bestHitStreak = ShieldCollision.hitStreak;
             }
             ShieldCollision.hitStreak = 0;
+
         }
     }
 

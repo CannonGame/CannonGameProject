@@ -23,10 +23,16 @@ public class ColonyExplosion : MonoBehaviour
             playAnimation = true;
             if (playAnimation)
             {
-                anim.SetTrigger("Destroy");
+                //anim.SetTrigger("Destroy");
                 playAnimation = false;
                 anim.Play("ColonyExplosion");
+
             }
         }
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        anim.Play("ColonyDamage");
+        Debug.Log("Ship has been hit");
     }
 }

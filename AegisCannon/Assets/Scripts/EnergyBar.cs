@@ -122,14 +122,19 @@ public class EnergyBar : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            if (SelectDifficultyButtons.difficultySetting == 4)
-            {
-                SceneManager.LoadScene("EndlessOver");
-            }
-            else
-            {
-                SceneManager.LoadScene("GameOver");
-            }
+            Invoke("SceneDelay", .5f);
+        }
+    }
+
+    void SceneDelay()
+    {
+        if (SelectDifficultyButtons.difficultySetting == 4)
+        {
+            SceneManager.LoadScene("EndlessOver");
+        }
+        else
+        {
+            SceneManager.LoadScene("GameOver");
         }
     }
 }

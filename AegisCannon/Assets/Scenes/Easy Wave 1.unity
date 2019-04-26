@@ -123,10 +123,10 @@ GameObject:
   - component: {fileID: 26205498}
   - component: {fileID: 26205497}
   - component: {fileID: 26205496}
-  - component: {fileID: 26205495}
   - component: {fileID: 26205494}
-  - component: {fileID: 26205499}
   - component: {fileID: 26205500}
+  - component: {fileID: 26205499}
+  - component: {fileID: 26205495}
   m_Layer: 0
   m_Name: SpaceColony
   m_TagString: Colony
@@ -161,9 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6c881c9075f7c43b126d77714fc521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceColony: {fileID: 21300000, guid: 7e0cc39ea08386e4faa48261326c4c3d, type: 3}
-  spaceColonyHit: {fileID: 21300000, guid: a9f72bdc1bc4aea4a9d8fa51bd1e6bee, type: 3}
-  shieldCharge: {fileID: 21300000, guid: 42e0ee8073030b642b15e053c2673130, type: 3}
+  spaceColony: {fileID: 0}
+  spaceColonyHit: {fileID: 0}
+  shieldCharge: {fileID: 0}
 --- !u!58 &26205496
 CircleCollider2D:
   m_ObjectHideFlags: 0
