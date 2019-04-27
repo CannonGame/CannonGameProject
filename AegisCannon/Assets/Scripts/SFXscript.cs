@@ -8,6 +8,7 @@ public class SFXscript : MonoBehaviour
     //audio objects
     public AudioSource enemyFire, lowHealth, boom1, boom2, boom3, shieldCollision;
 
+    //Shot sfx
     public void PlayEnemyFire()
     {
         enemyFire.Play();
