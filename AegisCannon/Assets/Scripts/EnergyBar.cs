@@ -16,7 +16,7 @@ public class EnergyBar : MonoBehaviour
     public static float maxHealth = 100;
     public GameObject energyCircle;
 
-    // Sets max energy and health. Sets current energy and health to max. Adjusts slider according to percentage.
+    // Sets max energy and health. Sets current energy and health to max. Adjusts slider according to percentage. Initializes objects
     void Start()
     {
         energyBar.value = CalculateEnergy();
