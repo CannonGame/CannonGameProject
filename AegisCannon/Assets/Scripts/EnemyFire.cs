@@ -18,13 +18,14 @@ public class EnemyFire : MonoBehaviour
     public int enemyShipFire;
     public static bool shipAlive = true;
     //Object to play shot SFX - DH
-    public SFXscript playShot = new SFXscript();
+    public SFXscript playShot;
 
     // Start is called before the first frame update. Gets Animator Component and Starts infinite Coroutine to make enemies fire.
     void Start()
     {
         animator = GetComponent<Animator>();
         StartCoroutine(StartFire());
+        playShot = GameObject.FindObjectOfType(typeof(SFXscript)) as SFXscript;
     }
 
     // Method to make enemies fire a projectile upwards relative to their position.
@@ -32,9 +33,7 @@ public class EnemyFire : MonoBehaviour
     {
         Rigidbody2D projectile1 = Instantiate(projectileBody, shipTransform.position, shipTransform.rotation);
         projectile1.velocity = transform.up * projectileSpeed;
-        //play SFX - DH
         playShot.PlayEnemyFire();
-        
     }
     // Called once per frame. Checks which enemy ship was assigned to fire. Sets all other enemy ships to not fire.
     void Update()
