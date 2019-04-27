@@ -16,8 +16,7 @@ public class EnergyBar : MonoBehaviour
     public static float maxHealth = 100;
     public GameObject energyCircle;
     //Declare SFX Objects - DH
-    SFXscript playerDeathSFX;
-    SFXscript lowHealth;
+    SFXscript playerDeathSFX, lowHealth, shieldCharged;
 
     // Sets max energy and health. Sets current energy and health to max. Adjusts slider according to percentage.
     void Start()
@@ -28,6 +27,7 @@ public class EnergyBar : MonoBehaviour
         energyCircle.SetActive(false);
         lowHealth = GameObject.FindObjectOfType(typeof(SFXscript)) as SFXscript;
         playerDeathSFX = GameObject.FindObjectOfType(typeof(SFXscript)) as SFXscript;
+        shieldCharged = GameObject.FindObjectOfType(typeof(SFXscript)) as SFXscript;
     }
 
     // Checks for energy shield level.
@@ -69,6 +69,14 @@ public class EnergyBar : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            //play death SFX - DH
+            playerDeathSFX.PlayBoom1();
+        }
+
+        if (currentHealth < 50)
+        {
+            //play low health SFX
+            lowHealth.PlayLowHealth();
         }
 
         healthBar.value = CalculateHealth();
@@ -119,7 +127,8 @@ public class EnergyBar : MonoBehaviour
             energyCircle.SetActive(true);
             GameObject.Find("PlayerShield").transform.localScale = new Vector3(0, 0, 0);
             FindObjectOfType<ShakeBehaviour>().TriggerShake();
-
+            //play shield charged SFX - DH
+            shieldCharged.PlayShieldCharge();
         }
     }
     // Method to check if current health drops to zero and calls game over screen if it is

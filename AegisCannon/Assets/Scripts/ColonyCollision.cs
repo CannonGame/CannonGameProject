@@ -13,11 +13,15 @@ public class ColonyCollision : MonoBehaviour
     public static int bestHitStreak = 0;
     Animator anim;
     bool isHit = false;
+    //SFX Object - DH
+    SFXscript shieldHit, colonyHit;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        shieldHit = GameObject.FindObjectOfType(typeof(SFXscript)) as SFXscript;
+        colonyHit = GameObject.FindObjectOfType(typeof(SFXscript)) as SFXscript;
     }
 
     // Update is called once per frame
@@ -28,6 +32,8 @@ public class ColonyCollision : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = shieldCharge;
             anim.Play("ShieldCharge");
+            //play SFX - DH
+            shieldHit.shieldCollision.Play();
         }
 
         // When colony changes, start timer
@@ -61,6 +67,8 @@ public class ColonyCollision : MonoBehaviour
                 bestHitStreak = ShieldCollision.hitStreak;
             }
             ShieldCollision.hitStreak = 0;
+            //play SFX - DH
+            colonyHit.PlayBoom3();
 
         }
     }

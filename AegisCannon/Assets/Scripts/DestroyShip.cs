@@ -24,6 +24,8 @@ public class DestroyShip : MonoBehaviour
             animator.Play("EnemyDie");
             Debug.Log("HIT");
             Destroy(gameObject, .5f);
+            //play SFX - DH
+            destroyEnemyShip.PlayBoom2();
         }
     }
 }

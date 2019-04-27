@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class SFXscript : MonoBehaviour
 {
     //audio objects
-    public AudioSource enemyFire, lowHealth, boom1, boom2, boom3, shieldCollision;
+    public AudioSource enemyFire, lowHealth, boom1, boom2, boom3, shieldCollision, shieldCharged;
 
     //Shot sfx
     public void PlayEnemyFire()
@@ -35,6 +35,10 @@ public class SFXscript : MonoBehaviour
     public void PlayShieldCollision()
     {
         shieldCollision.Play();
+    }
+    public void PlayShieldCharge()
+    {
+        shieldCharged.Play();
     }
 
     // Start is called before the first frame update
