@@ -7,7 +7,7 @@ public class DestroyShip : MonoBehaviour
     Animator animator;
     public GameObject energyCircle;
     //SFX object - DH
-    SFXscript destroyEnemyShip = new SFXscript();
+    SFXscript destroyEnemyShip = GameObject.FindObjectOfType(typeof(SFXscript)) as SFXscript;
 
     // Start is called before the first frame update
     void Start()

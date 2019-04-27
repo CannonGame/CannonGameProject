@@ -15,8 +15,8 @@ public class EnergyBar : MonoBehaviour
     public static float maxHealth = 100;
     public GameObject energyCircle;
     //Declare SFX Objects - DH
-    SFXscript playerDeathSFX = new SFXscript();
-    SFXscript lowHealth = new SFXscript();
+    SFXscript playerDeathSFX = GameObject.FindObjectOfType(typeof(SFXscript)) as SFXscript;
+    SFXscript lowHealth = GameObject.FindObjectOfType(typeof(SFXscript)) as SFXscript;
 
     // Sets max energy and health. Sets current energy and health to max. Adjusts slider according to percentage.
     void Start()
