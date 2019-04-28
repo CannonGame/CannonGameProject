@@ -18,12 +18,12 @@ public class GameOverText : MonoBehaviour
         // Displays stats
         if(SelectDifficultyButtons.difficultySetting == 4)
         {
-            gameOverText.text = "Survived: " + System.Environment.NewLine + 
+            gameOverText.text = "Survived: " + GameTimer.endOfGameTimer + System.Environment.NewLine + 
                 "Waves Survived: " + SelectDifficultyButtons.completedWaves + System.Environment.NewLine + "Best Streak: " + ColonyCollision.bestHitStreak;
         }
         else
         {
-            gameOverText.text = "Time: " + System.Environment.NewLine + 
+            gameOverText.text = "Time: " + GameTimer.endOfGameTimer + System.Environment.NewLine + 
                 "Waves Count: " + SelectDifficultyButtons.completedWaves + System.Environment.NewLine + "Best Streak: " + ColonyCollision.bestHitStreak;
         }
     }

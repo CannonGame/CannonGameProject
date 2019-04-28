@@ -7,6 +7,8 @@ public class GameTimer : MonoBehaviour
 {
     public Text gameTimerText;
     float gameTimer=0f;
+    public static string endOfGameTimer;
+    public bool setEndTime = false;
 
 
 
@@ -23,7 +25,10 @@ public class GameTimer : MonoBehaviour
 
     //Creates Timer
     void Update(){
-        gameTimer += Time.deltaTime;
+        if (EnergyBar.currentHealth > 0 && !PauseMenu.paused)
+        {
+            gameTimer += Time.deltaTime;
+        }
 
         // Creates variables for seconds, minutes and hours
         int seconds = (int)(gameTimer % 60);
@@ -33,5 +38,13 @@ public class GameTimer : MonoBehaviour
         // Formats timer to hours : minutes : seconds
         string timerString = string.Format("{0:0}:{1:00}:{2:00}", hours, minutes, seconds);
         gameTimerText.text = timerString;
+
+        // Sets ending time for end screen
+        if(EnergyBar.currentHealth <= 0 && !setEndTime || 
+            SelectDifficultyButtons.difficultySetting !=4 && SelectDifficultyButtons.completedWaves > 14 && !setEndTime)
+        {
+            endOfGameTimer = timerString;
+            setEndTime = true;
+        }
     }
 }
