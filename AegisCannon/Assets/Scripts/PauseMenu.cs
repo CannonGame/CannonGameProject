@@ -54,9 +54,10 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    // Returns to HomeScreen.
+    // Returns to HomeScreen. Destroys Timer.
     public void HomeScreen()
     {
+        GameObject.Destroy(GameObject.Find("UICanvas"));
         SceneManager.LoadScene("SelectDifficulty");
     }
 }

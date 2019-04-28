@@ -2,33 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameTimer : MonoBehaviour
 {
     public Text gameTimerText;
-    float gameTimer=0f;
+    float gameTimer = 0f;
     public static string endOfGameTimer;
     public bool setEndTime = false;
-
+    Scene scene;
 
 
     //Makes timer persist through scenes.
     public void Awake()
     {
         DontDestroyOnLoad(this);
-
         if (FindObjectsOfType(GetType()).Length > 1)
         {
             Destroy(gameObject);
         }
+        scene = SceneManager.GetActiveScene();
     }
 
     //Creates Timer
     void Update(){
-        if (EnergyBar.currentHealth > 0 && !PauseMenu.paused)
-        {
-            gameTimer += Time.deltaTime;
-        }
+
+        gameTimer += Time.deltaTime;
 
         // Creates variables for seconds, minutes and hours
         int seconds = (int)(gameTimer % 60);
