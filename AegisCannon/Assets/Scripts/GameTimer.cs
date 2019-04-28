@@ -39,6 +39,7 @@ public class GameTimer : MonoBehaviour
         string timerString = string.Format("{0:0}:{1:00}:{2:00}", hours, minutes, seconds);
         gameTimerText.text = timerString;
 
+        // Sets ending time for end screen
         if(EnergyBar.currentHealth <= 0 && !setEndTime || 
             SelectDifficultyButtons.difficultySetting !=4 && SelectDifficultyButtons.completedWaves > 14 && !setEndTime)
         {

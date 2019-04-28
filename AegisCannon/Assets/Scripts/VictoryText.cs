@@ -11,7 +11,7 @@ public class VictoryText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Clears the text
+        // Clears the text and prints victory game stats
         gameOverText = gameObject.GetComponent<Text>();
         gameOverText.text = "";       
         gameOverText.text = "Time: " + GameTimer.endOfGameTimer + System.Environment.NewLine +
