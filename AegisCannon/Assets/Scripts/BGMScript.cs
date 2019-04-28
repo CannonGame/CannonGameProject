@@ -7,18 +7,6 @@ public class BGMScript : MonoBehaviour
     //declare BGM object
     public static AudioSource BGM;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-
-    private void Awake()
-    {
-
-    }
-
     private void Update()
     {
         //Keep menu BGM between screens, not between game scenes, like game over, etc

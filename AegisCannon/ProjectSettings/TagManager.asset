@@ -8,6 +8,9 @@ TagManager:
   - Colony
   - Projectile
   - ShieldCircle
+  - music
+  - sfxslider
+  - sfxsliders
   layers:
   - Default
   - TransparentFX
