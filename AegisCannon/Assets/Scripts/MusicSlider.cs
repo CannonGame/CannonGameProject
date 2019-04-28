@@ -10,6 +10,7 @@ public class MusicSlider : MonoBehaviour
     public AudioSource myMusic;
     public AudioSource myMusic1;
     public AudioSource myMusic2;
+    public float volume = 1f;
 
     // Sets Volume from PlayerPrefs on Start
     void Start()
@@ -27,6 +28,7 @@ public class MusicSlider : MonoBehaviour
     //Method to update volume with music slider
     public void ChangeMusicVolume(float volume)
     {
+        volume = this.volume;
         volume = musicVolume.value;
         PlayerPrefs.SetFloat("Music Volume", volume);
         PlayerPrefs.Save();

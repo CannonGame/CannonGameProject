@@ -113,6 +113,7 @@ public class PulseWave : MonoBehaviour
             }
             if(SelectDifficultyButtons.difficultySetting != 4 && SelectDifficultyButtons.completedWaves == 15)
             {
+                GameObject.Destroy(GameObject.Find("UICanvas"));
                 SceneManager.LoadScene("WinScreen");
             }
             // Endless Waves

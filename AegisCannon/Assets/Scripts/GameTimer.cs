@@ -44,6 +44,7 @@ public class GameTimer : MonoBehaviour
         {
             endOfGameTimer = timerString;
             setEndTime = true;
+            GameObject.Destroy(GameObject.Find("UICanvas"));
         }
     }
 }

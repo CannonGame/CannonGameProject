@@ -14,7 +14,7 @@ public class SFXSlider : MonoBehaviour
     public AudioSource mySFX5;
     public AudioSource mySFX6;
     public string key = "SFX volume";
-    public float volume;
+    public float volume = 1f;
 
     // Sets volume from player prefs on start.
     void Start()
@@ -36,6 +36,7 @@ public class SFXSlider : MonoBehaviour
     // Method to change volume in player prefs
     public void ChangeVolume(float volume)
     {
+        volume = this.volume;
         volume = SFXVolume.value;
         PlayerPrefs.SetFloat(key, volume);
         PlayerPrefs.Save();
