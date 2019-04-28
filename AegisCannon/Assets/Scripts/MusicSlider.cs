@@ -11,11 +11,24 @@ public class MusicSlider : MonoBehaviour
     public AudioSource myMusic1;
     public AudioSource myMusic2;
 
-    // Update is called once per frame
+    // Sets Volume from PlayerPrefs on Start
+    void Start()
+    {
+        musicVolume.value = PlayerPrefs.GetFloat("Music Volume");
+    }
+    // Update is called once per frame Sets Music Volume from saved PlayerPrefs
     void Update()
     {
         myMusic.volume = musicVolume.value;
         myMusic1.volume = musicVolume.value;
         myMusic2.volume = musicVolume.value;
+    }
+
+    //Method to update volume with music slider
+    public void ChangeMusicVolume(float volume)
+    {
+        volume = musicVolume.value;
+        PlayerPrefs.SetFloat("Music Volume", volume);
+        PlayerPrefs.Save();
     }
 }

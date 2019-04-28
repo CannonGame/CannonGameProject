@@ -30,13 +30,18 @@ public class SwitchBGM : MonoBehaviour
             MenuBGM.Stop();
             BGM.Play();
     }
-        }
+        MenuBGM.volume = PlayerPrefs.GetFloat("Music Volume");
+        BGM.volume = PlayerPrefs.GetFloat("Music Volume");
+        LossBGM.volume = PlayerPrefs.GetFloat("Music Volume");
+    }
  
 
     // Update is called once per frame
     void Update()
     {
-                
+        MenuBGM.volume = PlayerPrefs.GetFloat("Music Volume");
+        BGM.volume = PlayerPrefs.GetFloat("Music Volume");
+        LossBGM.volume = PlayerPrefs.GetFloat("Music Volume");
     }
 
 

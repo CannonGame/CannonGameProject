@@ -41,10 +41,30 @@ public class SFXscript : MonoBehaviour
         shieldCharged.Play();
     }
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update. Gets volume for audio files from player prefs
     void Start()
     {
+        enemyFire.volume = PlayerPrefs.GetFloat("SFX volume");
+        lowHealth.volume = PlayerPrefs.GetFloat("SFX volume");
+        boom1.volume = PlayerPrefs.GetFloat("SFX volume");
+        boom2.volume = PlayerPrefs.GetFloat("SFX volume");
+        boom3.volume = PlayerPrefs.GetFloat("SFX volume");
+        shieldCollision.volume = PlayerPrefs.GetFloat("SFX volume");
+        shieldCharged.volume = PlayerPrefs.GetFloat("SFX volume");
+        Debug.Log(PlayerPrefs.GetFloat("SFX volume"));
+    }
 
+    // Update is called once per frame. Updates volume in player prefs
+    void Update()
+    {
+        enemyFire.volume = PlayerPrefs.GetFloat("SFX volume");
+        lowHealth.volume = PlayerPrefs.GetFloat("SFX volume");
+        boom1.volume = PlayerPrefs.GetFloat("SFX volume");
+        boom2.volume = PlayerPrefs.GetFloat("SFX volume");
+        boom3.volume = PlayerPrefs.GetFloat("SFX volume");
+        shieldCollision.volume = PlayerPrefs.GetFloat("SFX volume");
+        shieldCharged.volume = PlayerPrefs.GetFloat("SFX volume");
+        Debug.Log(PlayerPrefs.GetFloat("SFX volume"));
     }
 
 
