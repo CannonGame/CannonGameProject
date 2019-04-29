@@ -685,7 +685,7 @@ Transform:
   m_Children:
   - {fileID: 1693908888}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &497588352
 GameObject:
@@ -1545,7 +1545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a180873f40ce0784e930d74355b0fc20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuBGM: {fileID: 1599672358}
+  MenuBGM: {fileID: 0}
   BGM: {fileID: 95577961}
   LossBGM: {fileID: 138668164}
 --- !u!4 &1907087714

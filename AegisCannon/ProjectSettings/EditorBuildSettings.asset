@@ -23,8 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: b935426b09ff1934182d1dd4c5db6c8c
-  - enabled: 1
-    path: Assets/Scenes/GameOver.unity
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/9aa585b330509a64892bcc8cdb314cd2
     guid: 9aa585b330509a64892bcc8cdb314cd2
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
@@ -32,28 +32,46 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OptionsScreen.unity
     guid: f0b1c5adb1654b94787d9effa586bf2d
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Easy Wave 1.unity
-    guid: 6b00ffad68ca8c24c9c46959baefa1d9
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Medium Wave 1.unity
-    guid: ebdafe3123c2a6542a13e6ec70ba3d2b
-  - enabled: 1
-    path: Assets/Scenes/Hard Wave 1.unity
-    guid: 9b206c1117971f24e90ac401c53853a3
+    guid: a55eddfc9183b66498eaa420f3e7f200
   - enabled: 1
     path: Assets/Scenes/Endless Wave 1.unity
-    guid: f4f75775771c13d42b280d6bf4a4104c
+    guid: bae74c1e3c86d8e42ba01adfc475b197
+  - enabled: 1
+    path: Assets/Scenes/Medium Wave 1.unity
+    guid: 86f24051ff7ac614ab2cf1185c64c1be
+  - enabled: 1
+    path: Assets/Scenes/Hard Wave 1.unity
+    guid: d32f9ef2f092f6241acd72e5068a338a
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 5a55b76aa07a8e34aa0437ed8305d70d
   - enabled: 1
     path: Assets/Scenes/EndlessOver.unity
-    guid: 993d9ce49daa7c744837a660f3f59385
+    guid: 4e25c68203c316640b18584594c28123
   m_configObjects: {}
